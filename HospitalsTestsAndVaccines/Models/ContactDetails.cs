@@ -16,7 +16,7 @@ namespace HospitalsTestsAndVaccines.Models
         [MinLength(10)]
         public string Phone { get; set; }
         [Required]
-        public string Address { get; set; }
+        public string Address { get; set; } 
         [Required]
         public string City { get; set; }
         [Required]

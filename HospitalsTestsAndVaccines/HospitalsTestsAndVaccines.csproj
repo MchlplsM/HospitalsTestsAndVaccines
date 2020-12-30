@@ -199,6 +199,10 @@
     <Compile Include="Migrations\202012301406185_AddLastNamePhoneToAppUser.Designer.cs">
       <DependentUpon>202012301406185_AddLastNamePhoneToAppUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012301427235_FullAddOfDetailsToAppUser.cs" />
+    <Compile Include="Migrations\202012301427235_FullAddOfDetailsToAppUser.Designer.cs">
+      <DependentUpon>202012301427235_FullAddOfDetailsToAppUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ContactDetails.cs" />
@@ -332,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012301406185_AddLastNamePhoneToAppUser.resx">
       <DependentUpon>202012301406185_AddLastNamePhoneToAppUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012301427235_FullAddOfDetailsToAppUser.resx">
+      <DependentUpon>202012301427235_FullAddOfDetailsToAppUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
