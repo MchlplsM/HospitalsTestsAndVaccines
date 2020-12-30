@@ -10,6 +10,7 @@ namespace HospitalsTestsAndVaccines.Models
     {
         [Key]
         public int Id { get; set; }
+        public int CustomerId { get; set; }
         [Display(Name = "Ημερομηνία Παραγγελίας")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -18,6 +19,14 @@ namespace HospitalsTestsAndVaccines.Models
         public double TotalAmount { get; set; }
         public int HospitalId { get; set; }
         [Display(Name = "Κατάσταση Παραγγελίας")]
-        public string OrderStatus { get; set; }
+        public bool OrderStatus { get; set; }
+        //PaidWithCard OR PayWhenAtHospital
+
+
+        //public int PaymentId { get; set; } Should we use it here?
     }
 }
+//OrderID  ProductID
+//  1       1/2
+//  2       2/1
+//  3       4

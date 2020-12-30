@@ -10,107 +10,107 @@ using HospitalsTestsAndVaccines.Models;
 
 namespace HospitalsTestsAndVaccines.Controllers
 {
-    public class OrdersController : Controller
+    public class PaymentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Orders
+        // GET: Payments
         public ActionResult Index()
         {
-            return View(db.Orders.ToList());
+            return View(db.Payments.ToList());
         }
 
-        // GET: Orders/Details/5
+        // GET: Payments/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Orders.Find(id);
-            if (order == null)
+            Payment payment = db.Payments.Find(id);
+            if (payment == null)
             {
                 return HttpNotFound();
             }
-            return View(order);
+            return View(payment);
         }
 
-        // GET: Orders/Create
+        // GET: Payments/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Orders/Create
+        // POST: Payments/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CustomerId,OrderDate,TotalAmount,HospitalId,OrderStatus")] Order order)
+        public ActionResult Create([Bind(Include = "Id,PaymentMethod")] Payment payment)
         {
             if (ModelState.IsValid)
             {
-                db.Orders.Add(order);
+                db.Payments.Add(payment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(order);
+            return View(payment);
         }
 
-        // GET: Orders/Edit/5
+        // GET: Payments/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Orders.Find(id);
-            if (order == null)
+            Payment payment = db.Payments.Find(id);
+            if (payment == null)
             {
                 return HttpNotFound();
             }
-            return View(order);
+            return View(payment);
         }
 
-        // POST: Orders/Edit/5
+        // POST: Payments/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CustomerId,OrderDate,TotalAmount,HospitalId,OrderStatus")] Order order)
+        public ActionResult Edit([Bind(Include = "Id,PaymentMethod")] Payment payment)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(order).State = EntityState.Modified;
+                db.Entry(payment).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(order);
+            return View(payment);
         }
 
-        // GET: Orders/Delete/5
+        // GET: Payments/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Orders.Find(id);
-            if (order == null)
+            Payment payment = db.Payments.Find(id);
+            if (payment == null)
             {
                 return HttpNotFound();
             }
-            return View(order);
+            return View(payment);
         }
 
-        // POST: Orders/Delete/5
+        // POST: Payments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Order order = db.Orders.Find(id);
-            db.Orders.Remove(order);
+            Payment payment = db.Payments.Find(id);
+            db.Payments.Remove(payment);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

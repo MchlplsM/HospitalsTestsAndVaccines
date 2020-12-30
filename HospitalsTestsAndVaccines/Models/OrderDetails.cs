@@ -11,3 +11,9 @@ namespace HospitalsTestsAndVaccines.Models
         public int ProductId { get; set; }
     }
 }
+
+
+//Order ID ProductID
+//  1       1
+//  1       2
+//  1       4

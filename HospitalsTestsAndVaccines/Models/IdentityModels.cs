@@ -37,5 +37,7 @@ namespace HospitalsTestsAndVaccines.Models
         public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Order> Orders { get; set; }
 
         public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Product> Products { get; set; }
+
+        public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Payment> Payments { get; set; }
     }
 }

@@ -46,7 +46,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ProductName,Category,Description,Price")] Product product)
+        public ActionResult Create([Bind(Include = "Id,HospitalId,ProductName,ProductCategory,Description,Price")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ProductName,Category,Description,Price")] Product product)
+        public ActionResult Edit([Bind(Include = "Id,HospitalId,ProductName,ProductCategory,Description,Price")] Product product)
         {
             if (ModelState.IsValid)
             {
