@@ -22,7 +22,9 @@ namespace HospitalsTestsAndVaccines.Models
         public DateTime DateOfBirth { get; set; }
         [Required]
         [MinLength(11)]
-        public int AMKA { get; set; }
+        public string AMKA { get; set; }
         public string HealthIssues { get; set; }
+        public ContactDetails ContactDetails { get; set; }
+
     }
 }

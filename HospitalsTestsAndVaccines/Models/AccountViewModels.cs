@@ -65,6 +65,16 @@ namespace HospitalsTestsAndVaccines.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Όνομα")]
+        public string FirstName { get; set; }
+        [Required]
+        [Display(Name = "Επίθετο")]
+        public string LastName { get; set; }
+        [Required]
+        [Phone]
+        [Display(Name = "Τηλέφωνο")]
+        public string Phone { get; set; }
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
