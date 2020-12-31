@@ -6,7 +6,7 @@ using System.Web;
 
 namespace HospitalsTestsAndVaccines.Models
 {
-    public class Customer
+    public class Customer : ContactDetails
     {
         [Key]
         public int Id { get; set; }
@@ -17,14 +17,15 @@ namespace HospitalsTestsAndVaccines.Models
         [MinLength(2)]
         public string LastName { get; set; }
         [Required]
+        [Min16YearsIfAMember(16)]
+        [Display(Name = "Ημερομηνία Γέννησης")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth { get; set; }
         [Required]
         [MinLength(11)]
         public string AMKA { get; set; }
         public string HealthIssues { get; set; }
-        public ContactDetails ContactDetails { get; set; }
 
     }
 }

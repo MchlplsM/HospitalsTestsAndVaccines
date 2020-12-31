@@ -9,8 +9,7 @@ namespace HospitalsTestsAndVaccines.Models
     public class ContactDetails
     {
         public int Id { get; set; }
-        public int CustomerId { get; set; }
-        public int HospitalId { get; set; }
+        
         [Required]
         [Phone]
         [MinLength(10)]

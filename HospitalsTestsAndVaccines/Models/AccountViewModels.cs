@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace HospitalsTestsAndVaccines.Models
@@ -79,9 +80,10 @@ namespace HospitalsTestsAndVaccines.Models
         public string Amka { get; set; }
         [Required]
         [DataType(DataType.Date)]
+        [Min16YearsIfAMember(16)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Ημερομηνία Γέννησης")]
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         [Required]
         [Display(Name = "Πρ.Υγείας")]
         public string HealthIssues { get; set; }
