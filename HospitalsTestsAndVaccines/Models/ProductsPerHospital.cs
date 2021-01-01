@@ -12,6 +12,7 @@ namespace HospitalsTestsAndVaccines.Models
         public int HospitalId { get; set; }
         [Display(Name = "Διαθέσιμη Ποσότητα")]
         public int Quantity { get; set; }
+        //test comment
 
         
     }
