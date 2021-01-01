@@ -6,13 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using HospitalsTestsAndVaccines.Data;
 using HospitalsTestsAndVaccines.Models;
 
 namespace HospitalsTestsAndVaccines.Controllers
 {
     public class ProductsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private HospitalsTestsAndVaccinesContext db = new HospitalsTestsAndVaccinesContext();
 
         // GET: Products
         public ActionResult Index()

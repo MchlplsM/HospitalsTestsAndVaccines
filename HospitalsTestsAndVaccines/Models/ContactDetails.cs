@@ -8,22 +8,22 @@ namespace HospitalsTestsAndVaccines.Models
 {
     public class ContactDetails
     {
-        public int CustomerId { get; set; }
-        public int HospitalId { get; set; }
+        public int Id { get; set; }
+        
         [Required]
-        //attribute to make it phone
+        [Phone]
         [MinLength(10)]
         public string Phone { get; set; }
         [Required]
-        public string Address { get; set; }
+        public string Address { get; set; } 
         [Required]
         public string City { get; set; }
         [Required]
         public string PostalCode { get; set; }
         [Required]
         public string State { get; set; }
-        [Required]
-        //attribute to make it email
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address.")]
         public string Email { get; set; }
 
     }

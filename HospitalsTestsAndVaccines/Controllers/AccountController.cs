@@ -151,7 +151,10 @@ namespace HospitalsTestsAndVaccines.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, 
+                    LastName = model.LastName, Phone = model.Phone, Amka = model.Amka, DateOfBirth = model.DateOfBirth.ToString(), 
+                    HealthIssues = model.HealthIssues, Address = model.Address, City = model.City, PostalCode = model.PostalCode,
+                    State = model.State};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
