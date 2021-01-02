@@ -10,6 +10,7 @@ namespace HospitalsTestsAndVaccines.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "HospitalsTestsAndVaccines.Models.ApplicationDbContext";
         }
 
         protected override void Seed(HospitalsTestsAndVaccines.Models.ApplicationDbContext context)

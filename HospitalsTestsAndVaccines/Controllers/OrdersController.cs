@@ -17,7 +17,12 @@ namespace HospitalsTestsAndVaccines.Controllers
         // GET: Orders
         public ActionResult Index()
         {
-            return View(db.Orders.ToList());
+            //return View(db.Orders.ToList())
+
+            if (User.IsInRole("Admin"))
+                return View("Index");
+            else
+                return View("ReadOnlyIndex");
         }
 
         // GET: Orders/Details/5

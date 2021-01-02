@@ -177,9 +177,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101020848548_1.cs" />
-    <Compile Include="Migrations\202101020848548_1.Designer.cs">
-      <DependentUpon>202101020848548_1.cs</DependentUpon>
+    <Compile Include="Migrations\202101021223482_InitialCreate.cs" />
+    <Compile Include="Migrations\202101021223482_InitialCreate.Designer.cs">
+      <DependentUpon>202101021223482_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101021302405_1.cs" />
+    <Compile Include="Migrations\202101021302405_1.Designer.cs">
+      <DependentUpon>202101021302405_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -273,6 +277,7 @@
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Orders\ReadOnlyIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -291,8 +296,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101020848548_1.resx">
-      <DependentUpon>202101020848548_1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101021223482_InitialCreate.resx">
+      <DependentUpon>202101021223482_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101021302405_1.resx">
+      <DependentUpon>202101021302405_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
