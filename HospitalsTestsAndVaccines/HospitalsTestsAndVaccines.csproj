@@ -174,21 +174,12 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Data\HospitalsTestsAndVaccinesContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012302107107_InitialCreate.cs" />
-    <Compile Include="Migrations\202012302107107_InitialCreate.Designer.cs">
-      <DependentUpon>202012302107107_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012310834124_1.cs" />
-    <Compile Include="Migrations\202012310834124_1.Designer.cs">
-      <DependentUpon>202012310834124_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012310837025_2.cs" />
-    <Compile Include="Migrations\202012310837025_2.Designer.cs">
-      <DependentUpon>202012310837025_2.cs</DependentUpon>
+    <Compile Include="Migrations\202101020848548_1.cs" />
+    <Compile Include="Migrations\202101020848548_1.Designer.cs">
+      <DependentUpon>202101020848548_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -300,14 +291,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012302107107_InitialCreate.resx">
-      <DependentUpon>202012302107107_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012310834124_1.resx">
-      <DependentUpon>202012310834124_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012310837025_2.resx">
-      <DependentUpon>202012310837025_2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101020848548_1.resx">
+      <DependentUpon>202101020848548_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -336,7 +321,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties content_4bootstrap-theme_1min_1css_1map__JsonSchema="" content_4bootstrap_1css_1map__JsonSchema="" />
+      <UserProperties content_4bootstrap_1css_1map__JsonSchema="" content_4bootstrap-theme_1min_1css_1map__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

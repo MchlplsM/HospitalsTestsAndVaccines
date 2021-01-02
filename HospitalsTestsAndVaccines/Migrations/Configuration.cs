@@ -5,15 +5,14 @@ namespace HospitalsTestsAndVaccines.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<HospitalsTestsAndVaccines.Data.HospitalsTestsAndVaccinesContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<HospitalsTestsAndVaccines.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "HospitalsTestsAndVaccines.Data.HospitalsTestsAndVaccinesContext";
         }
 
-        protected override void Seed(HospitalsTestsAndVaccines.Data.HospitalsTestsAndVaccinesContext context)
+        protected override void Seed(HospitalsTestsAndVaccines.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

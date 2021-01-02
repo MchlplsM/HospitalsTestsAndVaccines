@@ -24,7 +24,7 @@ namespace HospitalsTestsAndVaccines.Models
         public DateTime DateOfBirth { get; set; }
         [Required]
         [MinLength(11)]
-        public string AMKA { get; set; }
+        public string Amka { get; set; }
         public string HealthIssues { get; set; }
 
     }
