@@ -6,14 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using HospitalsTestsAndVaccines.Data;
 using HospitalsTestsAndVaccines.Models;
 
 namespace HospitalsTestsAndVaccines.Controllers
 {
     public class CustomersController : Controller
     {
-        private HospitalsTestsAndVaccinesContext db = new HospitalsTestsAndVaccinesContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Customers
         public ActionResult Index()
@@ -47,7 +46,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,DateOfBirth,AMKA,HealthIssues,Phone,Address,City,PostalCode,State,Email")] Customer customer)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,DateOfBirth,Amka,HealthIssues,Phone,Address,City,PostalCode,State,Email")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +78,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,DateOfBirth,AMKA,HealthIssues,Phone,Address,City,PostalCode,State,Email")] Customer customer)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,DateOfBirth,Amka,HealthIssues,Phone,Address,City,PostalCode,State,Email")] Customer customer)
         {
             if (ModelState.IsValid)
             {
