@@ -6,7 +6,7 @@ using System.Web;
 
 namespace HospitalsTestsAndVaccines.Models
 {
-    public class Customer : ContactDetails
+    public class Customer
     {
         [Key]
         public int Id { get; set; }

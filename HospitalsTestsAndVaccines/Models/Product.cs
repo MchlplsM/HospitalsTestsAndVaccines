@@ -10,11 +10,10 @@ namespace HospitalsTestsAndVaccines.Models
     {
         [Key]
         public int Id { get; set; }
-        [Display(Name = "Κωδικός Νοσοκομείου")]
-        public int HospitalId { get; set; }
-        [Required]
-        [Display(Name = "Όνομα Προϊόντος")]
-        public string ProductName { get; set; }
+       
+        //[Required]
+        //[Display(Name = "Όνομα Προϊόντος")]
+        //public string ProductName { get; set; }
         [Required]
         [Display(Name = "Κατηγορία")]
         public ProductCategory ProductCategory { get; set; }

@@ -181,6 +181,26 @@
     <Compile Include="Migrations\202101020848548_1.Designer.cs">
       <DependentUpon>202101020848548_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101030937298_AddToCartFirstTry.cs" />
+    <Compile Include="Migrations\202101030937298_AddToCartFirstTry.Designer.cs">
+      <DependentUpon>202101030937298_AddToCartFirstTry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101030944280_ProductsInheritsFromProductsPerHospital.cs" />
+    <Compile Include="Migrations\202101030944280_ProductsInheritsFromProductsPerHospital.Designer.cs">
+      <DependentUpon>202101030944280_ProductsInheritsFromProductsPerHospital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101030946026_ProductsInheritsFromProductsPerHospital1.cs" />
+    <Compile Include="Migrations\202101030946026_ProductsInheritsFromProductsPerHospital1.Designer.cs">
+      <DependentUpon>202101030946026_ProductsInheritsFromProductsPerHospital1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101031011462_ForeingKeysAtContactDetails.cs" />
+    <Compile Include="Migrations\202101031011462_ForeingKeysAtContactDetails.Designer.cs">
+      <DependentUpon>202101031011462_ForeingKeysAtContactDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101031047505_Test.cs" />
+    <Compile Include="Migrations\202101031047505_Test.Designer.cs">
+      <DependentUpon>202101031047505_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ContactDetails.cs" />
@@ -273,6 +293,7 @@
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Products\AddToCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -293,6 +314,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202101020848548_1.resx">
       <DependentUpon>202101020848548_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101030937298_AddToCartFirstTry.resx">
+      <DependentUpon>202101030937298_AddToCartFirstTry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101030944280_ProductsInheritsFromProductsPerHospital.resx">
+      <DependentUpon>202101030944280_ProductsInheritsFromProductsPerHospital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101030946026_ProductsInheritsFromProductsPerHospital1.resx">
+      <DependentUpon>202101030946026_ProductsInheritsFromProductsPerHospital1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101031011462_ForeingKeysAtContactDetails.resx">
+      <DependentUpon>202101031011462_ForeingKeysAtContactDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101031047505_Test.resx">
+      <DependentUpon>202101031047505_Test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -321,7 +357,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties content_4bootstrap_1css_1map__JsonSchema="" content_4bootstrap-theme_1min_1css_1map__JsonSchema="" />
+      <UserProperties content_4bootstrap-theme_1min_1css_1map__JsonSchema="" content_4bootstrap_1css_1map__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
