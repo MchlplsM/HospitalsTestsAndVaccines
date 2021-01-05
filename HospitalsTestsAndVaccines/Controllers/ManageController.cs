@@ -50,6 +50,16 @@ namespace HospitalsTestsAndVaccines.Controllers
             }
         }
 
+        //Extra from us
+        public ActionResult ShowInfoOfLoggedUser()
+        {
+
+            ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+            return View(user);
+
+        }
+
+
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)

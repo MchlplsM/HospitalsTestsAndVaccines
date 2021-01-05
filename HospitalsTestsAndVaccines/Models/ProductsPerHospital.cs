@@ -14,10 +14,10 @@ namespace HospitalsTestsAndVaccines.Models
         //------------------------------
         public int HospitalId { get; set; }
         //-----------------------------
-        [Display(Name = "Διαθέσιμη Ποσότητα")]
-        public int Quantity { get; set; }
-        public Product Product { get; set; }
-        public Hospital Hospital { get; set; }
+        //[Display(Name = "Διαθέσιμη Ποσότητα")]
+        //public int Quantity { get; set; }
+        //public Product Product { get; set; }
+        //public Hospital Hospital { get; set; }
 
 
     }
