@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HospitalsTestsAndVaccines.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace HospitalsTestsAndVaccines.Controllers
 {
@@ -17,8 +18,11 @@ namespace HospitalsTestsAndVaccines.Controllers
         // GET: Customers
         public ActionResult Index()
         {
+            //User.Identity.Name
+            var context = new ApplicationDbContext();
+            var users = context.Users.ToList();
 
-            return View(db.Customers.ToList());
+            return View(users);
         }
 
         // GET: Customers/Details/5
