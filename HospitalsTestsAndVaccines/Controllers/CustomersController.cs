@@ -63,18 +63,19 @@ namespace HospitalsTestsAndVaccines.Controllers
         }
 
         // GET: Customers/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            ApplicationUser applicationUser = db.Users.Find(id);
+            if (applicationUser == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(applicationUser);
         }
 
         // POST: Customers/Edit/5
@@ -82,15 +83,15 @@ namespace HospitalsTestsAndVaccines.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,DateOfBirth,Amka,HealthIssues,Phone,Address,City,PostalCode,State,Email")] Customer customer)
+        public ActionResult Edit([Bind(Include = "FirstName,LastName,DateOfBirth,Amka,HealthIssues,Phone,Address,City,PostalCode,State,Email")] ApplicationUser applicationUser)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(customer).State = EntityState.Modified;
+                db.Entry(applicationUser).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(customer);
+            return View(applicationUser);
         }
 
         // GET: Customers/Delete/5

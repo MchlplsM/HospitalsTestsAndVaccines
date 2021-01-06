@@ -17,8 +17,8 @@ namespace HospitalsTestsAndVaccines.Models
         public DateTime OrderDate { get; set; }
         [Display(Name = "Συνολικό Ποσό")]
         public double TotalAmount { get; set; }
-        public int HospitalId { get; set; }
-        [Display(Name = "Κατάσταση Παραγγελίας")]
+        //public int HospitalId { get; set; }
+        //[Display(Name = "Κατάσταση Παραγγελίας")]
         public bool OrderStatus { get; set; }
         //PaidWithCard OR PayWhenAtHospital
 

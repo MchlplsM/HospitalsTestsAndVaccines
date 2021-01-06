@@ -184,6 +184,10 @@
     <Compile Include="Migrations\202101060921262_DeletedContactDetailsAndHospital.Designer.cs">
       <DependentUpon>202101060921262_DeletedContactDetailsAndHospital.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101061004193_AndAnotherOne.cs" />
+    <Compile Include="Migrations\202101061004193_AndAnotherOne.Designer.cs">
+      <DependentUpon>202101061004193_AndAnotherOne.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -194,7 +198,6 @@
     <Compile Include="Models\OrderDetails.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ProductsPerHospital.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -293,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101060921262_DeletedContactDetailsAndHospital.resx">
       <DependentUpon>202101060921262_DeletedContactDetailsAndHospital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101061004193_AndAnotherOne.resx">
+      <DependentUpon>202101061004193_AndAnotherOne.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
