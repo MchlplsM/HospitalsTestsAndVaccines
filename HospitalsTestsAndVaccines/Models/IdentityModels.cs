@@ -65,7 +65,7 @@ namespace HospitalsTestsAndVaccines.Models
 
         public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Customer> Customers { get; set; }
 
-        public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Hospital> Hospitals { get; set; }
+        //public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Hospital> Hospitals { get; set; }
 
         public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Product> Products { get; set; }
 

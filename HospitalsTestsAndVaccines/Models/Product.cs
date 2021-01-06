@@ -23,7 +23,7 @@ namespace HospitalsTestsAndVaccines.Models
         public string Description { get; set; }
         [Display(Name = "Τιμή")]
         public double Price { get; set; }
-        public List<Hospital> Hospitals { get; set; }
+        //public List<Hospital> Hospitals { get; set; }
 
     }
     public enum ProductCategory

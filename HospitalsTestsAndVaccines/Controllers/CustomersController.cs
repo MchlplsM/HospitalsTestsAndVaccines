@@ -18,10 +18,9 @@ namespace HospitalsTestsAndVaccines.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            //User.Identity.Name
+            var curretlyLoggedInUserId = (((System.Security.Claims.ClaimsPrincipal)System.Web.HttpContext.Current.User).Claims).ToList()[0].Value;
             var context = new ApplicationDbContext();
-            var users = context.Users.ToList();
-
+            var users = context.Users.Single(e => e.Id == curretlyLoggedInUserId);
             return View(users);
         }
 
