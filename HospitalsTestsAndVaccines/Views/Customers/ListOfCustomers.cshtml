@@ -1,4 +1,6 @@
-﻿@model  HospitalsTestsAndVaccines.Models.ApplicationUser
+﻿
+
+@model IEnumerable<HospitalsTestsAndVaccines.Models.ApplicationUser>
 
 @{
     ViewBag.Title = "Index";
@@ -48,27 +50,26 @@
         <th></th>
     </tr>
 
-    @*@foreach (var item in Model)
+    @foreach (var item in Model)
     {
-        if (item.Id == "998f4c88-2cd8-40ae-a8b6-6dac697b4bfa")
-        {*@
+        
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => Model.FirstName)
+                    @Html.DisplayFor(modelItem => item.FirstName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => Model.LastName)
+                    @Html.DisplayFor(modelItem => item.LastName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => Model.DateOfBirth)
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => Model.Amka)
+                    @Html.DisplayFor(modelItem => item.Amka)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => Model.HealthIssues)
+                    @Html.DisplayFor(modelItem => item.HealthIssues)
                 </td>
-                @*}*@
+                
 
                 @*<td>
                         @Html.DisplayFor(modelItem => item.Phone)
@@ -89,12 +90,12 @@
                         @Html.DisplayFor(modelItem => item.Email)
                     </td>*@
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                 </td>
             </tr>
-        @*}*@
+      
     }
 
     </table>

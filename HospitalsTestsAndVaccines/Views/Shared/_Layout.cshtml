@@ -25,10 +25,15 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Products", "Index", "Products")</li>
-                    @*@if (User.IsInRole("Patient"))
-                    {*@
+                    @if (User.IsInRole("Patient"))
+                    { 
                         <li>@Html.ActionLink("Orders", "Index", "Orders")</li>
-                        <li>@Html.ActionLink("Profile", "Index", "Customers")</li>@*}*@
+                        <li>@Html.ActionLink("Profile", "ReadAndEditOnly", "Customers")</li>
+                     }
+                    @if (User.IsInRole("Devs") || User.IsInRole("HospAdmin"))
+                    { 
+                        <li>@Html.ActionLink("Patients", "ListOfCustomers", "Customers")</li>
+                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

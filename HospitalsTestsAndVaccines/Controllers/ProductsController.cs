@@ -10,6 +10,7 @@ using HospitalsTestsAndVaccines.Models;
 
 namespace HospitalsTestsAndVaccines.Controllers
 {
+    [AllowAnonymous]
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

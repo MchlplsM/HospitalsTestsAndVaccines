@@ -188,6 +188,18 @@
     <Compile Include="Migrations\202101061004193_AndAnotherOne.Designer.cs">
       <DependentUpon>202101061004193_AndAnotherOne.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101061134125_AndAndAndAnotherOne.cs" />
+    <Compile Include="Migrations\202101061134125_AndAndAndAnotherOne.Designer.cs">
+      <DependentUpon>202101061134125_AndAndAndAnotherOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101061135427_AndAndAndAnotherOne1.cs" />
+    <Compile Include="Migrations\202101061135427_AndAndAndAnotherOne1.Designer.cs">
+      <DependentUpon>202101061135427_AndAndAndAnotherOne1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101061137216_AndAndAndAnotherOne2.cs" />
+    <Compile Include="Migrations\202101061137216_AndAndAndAnotherOne2.Designer.cs">
+      <DependentUpon>202101061137216_AndAndAndAnotherOne2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -261,7 +273,7 @@
     <Content Include="Views\Customers\Delete.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
-    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\ListOfCustomers.cshtml" />
     <Content Include="Views\Orders\Create.cshtml" />
     <Content Include="Views\Orders\Delete.cshtml" />
     <Content Include="Views\Orders\Details.cshtml" />
@@ -273,6 +285,7 @@
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\AddToCart.cshtml" />
+    <Content Include="Views\Customers\ReadAndEditOnly.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -299,6 +312,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101061004193_AndAnotherOne.resx">
       <DependentUpon>202101061004193_AndAnotherOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101061134125_AndAndAndAnotherOne.resx">
+      <DependentUpon>202101061134125_AndAndAndAnotherOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101061135427_AndAndAndAnotherOne1.resx">
+      <DependentUpon>202101061135427_AndAndAndAnotherOne1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101061137216_AndAndAndAnotherOne2.resx">
+      <DependentUpon>202101061137216_AndAndAndAnotherOne2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
