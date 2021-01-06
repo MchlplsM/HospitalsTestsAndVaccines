@@ -41,12 +41,12 @@ namespace HospitalsTestsAndVaccines.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            ApplicationUser application = db.Users.Find(id);
+            if (application == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(application);
         }
 
         // GET: Customers/Create
