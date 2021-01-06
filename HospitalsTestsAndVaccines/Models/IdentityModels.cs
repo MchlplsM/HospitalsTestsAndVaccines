@@ -68,8 +68,10 @@ namespace HospitalsTestsAndVaccines.Models
         //public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Hospital> Hospitals { get; set; }
 
         public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Product> Products { get; set; }
-
+        
         public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Order> Orders { get; set; }
+
+        //public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.ApplicationUser> ApplicationUsers { get; set; }
 
         //public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.ApplicationUser> IdentityUsers { get; set; } //NOT NEEDED
 
