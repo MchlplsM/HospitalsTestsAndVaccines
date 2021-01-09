@@ -26,12 +26,12 @@
                     <li>@Html.ActionLink("Products", "Index", "Products")</li>
                     @if (User.IsInRole("Patient"))
                     { 
-                        <li>@Html.ActionLink("Orders", "Index", "Orders")</li>
-                        <li>@Html.ActionLink("Profile", "ReadAndEditOnly", "Customers")</li>
+                        <li>@Html.ActionLink("Orders", "New", "Orders")</li>
+                        <li>@Html.ActionLink("Profile", "ReadAndEditOnly", "ApplicationUsers")</li>
                      }
                     @if (User.IsInRole("Devs") || User.IsInRole("HospAdmin"))
                     { 
-                        <li>@Html.ActionLink("Patients", "ListOfCustomers", "Customers")</li>
+                        <li>@Html.ActionLink("Patients", "ListOfCustomers", "ApplicationUsers")</li>
                      }
                 </ul>
                 @Html.Partial("_LoginPartial")

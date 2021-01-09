@@ -28,7 +28,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Product product = db.Products.SingleOrDefault(p => p.Id == id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -66,7 +66,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Product product = db.Products.SingleOrDefault(p => p.Id == id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -89,6 +89,39 @@ namespace HospitalsTestsAndVaccines.Controllers
             }
             return View(product);
         }
+        //----------------------------------BOOK A DATE
+
+        public ActionResult BookADate(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = db.Products.SingleOrDefault(p => p.Id == id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+
+        }
+
+        // POST: Products/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult BookADate([Bind(Include = "Id,ProductName,ProductCategory,Description,Price")] Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(product).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(product);
+        }
+
 
         // GET: Products/Delete/5
         public ActionResult Delete(int? id)
@@ -97,7 +130,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Product product = db.Products.SingleOrDefault(p => p.Id == id);
             if (product == null)
             {
                 return HttpNotFound();

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HospitalsTestsAndVaccines.Models.Order>
+﻿@model IEnumerable<HospitalsTestsAndVaccines.Models.Appointment>
 
 @{
     ViewBag.Title = "Index";
@@ -13,19 +13,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CustomerId)
+            @Html.DisplayNameFor(model => model.StartDateTime)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrderDate)
+            @Html.DisplayNameFor(model => model.Detail)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TotalAmount)
+            @Html.DisplayNameFor(model => model.Status)
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.HospitalId)
-        </th>*@
         <th>
-            @Html.DisplayNameFor(model => model.OrderStatus)
+            @Html.DisplayNameFor(model => model.ApplicationUserId)
         </th>
         <th></th>
     </tr>
@@ -33,19 +30,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CustomerId)
+            @Html.DisplayFor(modelItem => item.StartDateTime)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.OrderDate)
+            @Html.DisplayFor(modelItem => item.Detail)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TotalAmount)
+            @Html.DisplayFor(modelItem => item.Status)
         </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.HospitalId)
-        </td>*@
         <td>
-            @Html.DisplayFor(modelItem => item.OrderStatus)
+            @Html.DisplayFor(modelItem => item.ApplicationUserId)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

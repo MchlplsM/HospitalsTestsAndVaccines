@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -55,12 +58,21 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -167,13 +179,17 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationUsersController.cs" />
-    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\AppointmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\IApplicationUserRepository.cs" />
+    <Compile Include="Core\Repositories\IAppointmentRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,18 +217,34 @@
     <Compile Include="Migrations\202101061137216_AndAndAndAnotherOne2.Designer.cs">
       <DependentUpon>202101061137216_AndAndAndAnotherOne2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101090916376_NaSouPethanei.cs" />
+    <Compile Include="Migrations\202101090916376_NaSouPethanei.Designer.cs">
+      <DependentUpon>202101090916376_NaSouPethanei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101091357382_AddedRepositoriesInterfaceForAppointmentsAndOtherModels.cs" />
+    <Compile Include="Migrations\202101091357382_AddedRepositoriesInterfaceForAppointmentsAndOtherModels.Designer.cs">
+      <DependentUpon>202101091357382_AddedRepositoriesInterfaceForAppointmentsAndOtherModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Min16YearsIfAMember.cs" />
-    <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\OrderDetails.cs" />
-    <Compile Include="Models\Payment.cs" />
-    <Compile Include="Models\Product.cs" />
+    <Compile Include="Core\Models\AccountViewModels.cs" />
+    <Compile Include="Core\Models\ApplicationUser.cs" />
+    <Compile Include="Core\Models\Appointment.cs" />
+    <Compile Include="Core\Models\IdentityModels.cs" />
+    <Compile Include="Core\Models\ManageViewModels.cs" />
+    <Compile Include="Core\Models\Min16YearsIfAMember.cs" />
+    <Compile Include="Core\Models\Order.cs" />
+    <Compile Include="Core\Models\OrderDetails.cs" />
+    <Compile Include="Core\Models\Payment.cs" />
+    <Compile Include="Core\Models\Product.cs" />
+    <Compile Include="Persistence\Repositories\AppointmentRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\AppointmentFormViewModel.cs" />
+    <Compile Include="ViewModels\AppointmentSearchVM.cs" />
+    <Compile Include="ViewModels\UserFormViewModel.cs" />
+    <Compile Include="ViewModels\Users_in_Role_ViewModel.cs" />
+    <Compile Include="ViewModels\ValidDate.cs" />
+    <Compile Include="ViewModels\ValidTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -275,26 +307,32 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\ListOfCustomers.cshtml" />
-    <Content Include="Views\Orders\Create.cshtml" />
-    <Content Include="Views\Orders\Delete.cshtml" />
-    <Content Include="Views\Orders\Details.cshtml" />
-    <Content Include="Views\Orders\Edit.cshtml" />
-    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Orders\New.cshtml" />
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Products\Delete.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\Products\AddToCart.cshtml" />
+    <Content Include="Views\Products\BookADate.cshtml" />
     <Content Include="Views\Customers\ReadAndEditOnly.cshtml" />
     <Content Include="Views\ApplicationUsers\Create.cshtml" />
     <Content Include="Views\ApplicationUsers\Delete.cshtml" />
     <Content Include="Views\ApplicationUsers\Details.cshtml" />
     <Content Include="Views\ApplicationUsers\Edit.cshtml" />
     <Content Include="Views\ApplicationUsers\ListOfCustomers.cshtml" />
+    <Content Include="Views\Products\ReadOnlyList.cshtml" />
+    <Content Include="Views\ApplicationUsers\UsersWithRoles.cshtml" />
+    <Content Include="Views\ApplicationUsers\Index.cshtml" />
+    <Content Include="Views\ApplicationUsers\ReadAndEditOnly.cshtml" />
+    <Content Include="Views\Appointments\Create.cshtml" />
+    <Content Include="Views\Appointments\Delete.cshtml" />
+    <Content Include="Views\Appointments\Details.cshtml" />
+    <Content Include="Views\Appointments\Edit.cshtml" />
+    <Content Include="Views\Appointments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Api\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -327,6 +365,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101061137216_AndAndAndAnotherOne2.resx">
       <DependentUpon>202101061137216_AndAndAndAnotherOne2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101090916376_NaSouPethanei.resx">
+      <DependentUpon>202101090916376_NaSouPethanei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101091357382_AddedRepositoriesInterfaceForAppointmentsAndOtherModels.resx">
+      <DependentUpon>202101091357382_AddedRepositoriesInterfaceForAppointmentsAndOtherModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
