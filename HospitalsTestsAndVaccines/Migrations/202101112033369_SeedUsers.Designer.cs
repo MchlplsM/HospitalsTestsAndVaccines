@@ -7,13 +7,13 @@ namespace HospitalsTestsAndVaccines.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class DeletedContactDetailsAndHospital : IMigrationMetadata
+    public sealed partial class SeedUsers : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DeletedContactDetailsAndHospital));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SeedUsers));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101060921262_DeletedContactDetailsAndHospital"; }
+            get { return "202101112033369_SeedUsers"; }
         }
         
         string IMigrationMetadata.Source

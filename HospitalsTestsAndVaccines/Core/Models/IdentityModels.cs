@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using HospitalsTestsAndVaccines.Core.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -25,11 +26,12 @@ namespace HospitalsTestsAndVaccines.Models
 
         //public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Hospital> Hospitals { get; set; }
 
-        public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
         
-        public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Order> Orders { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }
 
-        public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.Appointment> Appointments { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
 
         //public System.Data.Entity.DbSet<HospitalsTestsAndVaccines.Models.ApplicationUser> ApplicationUsers { get; set; }
 

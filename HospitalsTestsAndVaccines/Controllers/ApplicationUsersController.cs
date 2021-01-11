@@ -42,7 +42,8 @@ namespace HospitalsTestsAndVaccines.Controllers
             //return View(users);
         }
 
-        ds
+        
+
         [Authorize]
         public ActionResult Index()
         {

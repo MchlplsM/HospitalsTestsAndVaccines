@@ -26,6 +26,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             //GetAppointments
             var appointments = _context.Appointments
                 .Include(p => p.ApplicationUser)
+                .Include(d => d.Doctor)
                 .Include(p => p.Product)
                 .ToList();
             return View(appointments);
@@ -35,6 +36,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             var appointment = _context.Appointments
                 .Where(p => p.ApplicationUserId == id)
                 .Include(p => p.ApplicationUser)
+                .Include(d => d.Doctor)
                 .ToList();
             return View("_AppointmentPartial", appointment);
         }
@@ -47,9 +49,9 @@ namespace HospitalsTestsAndVaccines.Controllers
                 //ApplicationUsers = _context.ApplicationUsers.ToList(),
                 Products = _context.Products.ToList(),
                 // AvailableDoctor
-                //Doctors = _context.Doctors
-                //.Where(a => a.IsAvailable == true)
-                //.ToList(),
+                Doctors = _context.Doctors
+                .Where(a => a.IsAvailable == true)
+                .ToList(),
 
                 Heading = "New Appointment"
             };
@@ -60,13 +62,13 @@ namespace HospitalsTestsAndVaccines.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(AppointmentFormViewModel viewModel)
         {
-            //if (!ModelState.IsValid)
+            //if (!modelstate.isvalid)
             //{
-            //    // AvailableDoctor
-            //    viewModel.Doctors = _context.Doctors
-            //    .Where(a => a.IsAvailable == true)
-            //    .ToList();
-            //    return View(viewModel);
+            //    // availabledoctor
+            //    viewmodel.doctors = _context.doctors
+            //    .where(a => a.isavailable == true)
+            //    .tolist();
+            //    return view(viewmodel);
 
             //}
             var appointment = new Appointment()
@@ -76,7 +78,7 @@ namespace HospitalsTestsAndVaccines.Controllers
                 Status = true,
                 ApplicationUserId = viewModel.ApplicationUser,
                 Product = _context.Products.SingleOrDefault(p => p.Id.ToString() == viewModel.Product),
-                //Doctor = _context.Doctors.SingleOrDefault(d => d.Id == viewModel.Doctor)
+                Doctor = _context.Doctors.SingleOrDefault(d => d.Id == viewModel.Doctor)
                 //Doctor = _unitOfWork.Doctors.GetDoctor(viewModel.Doctor)
 
 
@@ -92,7 +94,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         }
 
 
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
             var appointment = _context.Appointments.Find(id);
             var viewModel = new AppointmentFormViewModel()
@@ -105,7 +107,7 @@ namespace HospitalsTestsAndVaccines.Controllers
                 Status = appointment.Status,
                 ApplicationUser = appointment.ApplicationUserId,
                 //Patients = _unitOfWork.Patients.GetPatients(),
-                //Doctors = _context.Doctors.ToList()
+                Doctors = _context.Doctors.ToList()
             };
             return View(viewModel);
         }

@@ -1,4 +1,5 @@
-﻿using HospitalsTestsAndVaccines.Models;
+﻿using HospitalsTestsAndVaccines.Core.Models;
+using HospitalsTestsAndVaccines.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -23,6 +24,10 @@ namespace HospitalsTestsAndVaccines.ViewModels
 
         [Required]
         public bool Status { get; set; }
+        [Required]
+        public string Doctor { get; set; }
+
+        public IEnumerable<Doctor> Doctors { get; set; }
 
 
         [Required]
