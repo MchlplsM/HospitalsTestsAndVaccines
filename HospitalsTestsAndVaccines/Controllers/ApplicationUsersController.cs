@@ -14,35 +14,35 @@ namespace HospitalsTestsAndVaccines.Controllers
     public class ApplicationUsersController : Controller
     {
         //private ApplicationDbContext db = new ApplicationDbContext();
-
-        //// GET: ApplicationUsers
-        //[Authorize(Roles = "Devs, HospAdmin")]
-        //public ActionResult ListOfCustomers(string option, string search) //ONLY DEVS WILL SEE
-        //{
-        //    //var context = new ApplicationDbContext();
-        //    //var users = context.Users.ToList();
-        //    if (option == "FirstName")
-        //    {
-        //        //Index action method will return a view with a student records based on what a user specify the value in textbox  
-        //        return View(db.Users.Where(x => x.FirstName.Contains(search) || search == null).ToList());
-        //    }
-        //    else if(option == "LastName")
-        //    {
-        //        return View(db.Users.Where(x => x.LastName.Contains(search) || search == null).ToList());
-        //    }
-        //    else
-        //    {
-        //        return View(db.Users.Where(x => x.Phone.Contains(search) || search == null).ToList());
-        //    }
-
-        //    //return View(users);
-        //}
-
         private ApplicationDbContext context;
         public ApplicationUsersController()
         {
             context = new ApplicationDbContext();
         }
+        // GET: ApplicationUsers
+        [Authorize(Roles = "Devs, HospAdmin")]
+        public ActionResult ListOfCustomers(string option, string search) //ONLY DEVS WILL SEE
+        {
+            //var context = new ApplicationDbContext();
+            //var users = context.Users.ToList();
+            if (option == "FirstName")
+            {
+                //Index action method will return a view with a student records based on what a user specify the value in textbox  
+                return View(context.Users.Where(x => x.FirstName.Contains(search) || search == null).ToList());
+            }
+            else if (option == "LastName")
+            {
+                return View(context.Users.Where(x => x.LastName.Contains(search) || search == null).ToList());
+            }
+            else
+            {
+                return View(context.Users.Where(x => x.Phone.Contains(search) || search == null).ToList());
+            }
+
+            //return View(users);
+        }
+
+        
         [Authorize]
         public ActionResult Index()
         {
@@ -50,19 +50,18 @@ namespace HospitalsTestsAndVaccines.Controllers
             return View(users);
         }
 
-        // GET: ApplicationUsers
-        public ActionResult ListOfCustomers() //ONLY DEVS WILL SEEd
-        {
-            var users = context.Users.ToList();
-            return View(users);
-        }
+        //// GET: ApplicationUsers
+        //public ActionResult ListOfCustomers() //ONLY DEVS WILL SEEd
+        //{
+        //    var users = context.Users.ToList();
+        //    return View(users);
+        //}
         public ActionResult ReadAndEditOnly()
         {
-            var curretlyLoggedInUserId = (((System.Security.Claims.ClaimsPrincipal)System.Web.HttpContext.Current.User).Claims).ToList()[0].Value;
+            var currentlyLoggedInUserId = (((System.Security.Claims.ClaimsPrincipal)System.Web.HttpContext.Current.User).Claims).ToList()[0].Value;
             var context = new ApplicationDbContext();
-            var users = context.Users.Single(e => e.Id == curretlyLoggedInUserId);
+            var users = context.Users.Single(e => e.Id == currentlyLoggedInUserId);
             return View(users);
-
         }
 
         public ActionResult Details(string id)

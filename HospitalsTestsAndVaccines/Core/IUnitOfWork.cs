@@ -11,7 +11,6 @@ namespace HospitalsTestsAndVaccines.Core
     {
         //IPatientRepository Patients { get; }
         IApplicationUserRepository ApplicationUsers { get; }
-        
         IAppointmentRepository Appointments { get; }
         //IAttendanceRepository Attandences { get; }
         //ICityRepository Cities { get; }

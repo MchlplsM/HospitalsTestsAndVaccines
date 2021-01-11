@@ -11,11 +11,11 @@ namespace HospitalsTestsAndVaccines.Core.Repositories
     public interface IAppointmentRepository
     {
         IEnumerable<Appointment> GetAppointments();//GOT THIS
-        IEnumerable<Appointment> GetAppointmentWithApplicationUser(int id); //MAYBE NEEDS STRING //GOT THIS
+        IEnumerable<Appointment> GetAppointmentWithApplicationUser(string id); //MAYBE NEEDS STRING //GOT THIS
         IEnumerable<Appointment> GetDaillyAppointments(DateTime getDate); //GOT THIS
         IQueryable<Appointment> FilterAppointments(AppointmentSearchVM searchModel);
         bool ValidateAppointment(DateTime appntDate); //GOT THIS
-        int CountAppointments(int id); //GOT THIS
+        int CountAppointments(string id); //GOT THIS
         Appointment GetAppointment(int id); //GOT THIS
         void Add(Appointment appointment); //GOT THIS
 

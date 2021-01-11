@@ -31,7 +31,7 @@ namespace HospitalsTestsAndVaccines.Persistence.Repositories
             /// </summary>
             /// <param name="id"></param>
             /// <returns></returns>
-            public IEnumerable<Appointment> GetAppointmentWithApplicationUser(int id)
+            public IEnumerable<Appointment> GetAppointmentWithApplicationUser(string id)
             {
                 return context.Appointments
                     .Where(p => p.ApplicationUserId == id)
@@ -94,7 +94,7 @@ namespace HospitalsTestsAndVaccines.Persistence.Repositories
             /// </summary>
             /// <param name="id"></param>
             /// <returns></returns>
-            public int CountAppointments(int id)
+            public int CountAppointments(string id)
             {
                 return context.Appointments.Count(a => a.ApplicationUserId == id);
             }

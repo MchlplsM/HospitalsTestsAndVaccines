@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using HospitalsTestsAndVaccines.Core.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Claims;
@@ -44,6 +46,8 @@ namespace HospitalsTestsAndVaccines.Models
         [Required]
         [Display(Name = "Νομός")]
         public string State { get; set; }
+        public ICollection<Appointment> Appointments { get; set; }
+        public ICollection<Attendance> Attendances { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -51,6 +55,11 @@ namespace HospitalsTestsAndVaccines.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
             return userIdentity;
+        }
+        public ApplicationUser()
+        {
+            Appointments = new Collection<Appointment>();
+            Attendances = new Collection<Attendance>();
         }
     }
 }

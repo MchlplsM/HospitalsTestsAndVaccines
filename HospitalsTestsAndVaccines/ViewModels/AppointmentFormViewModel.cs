@@ -9,14 +9,12 @@ namespace HospitalsTestsAndVaccines.ViewModels
 {
     public class AppointmentFormViewModel
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [Required]
-        [ValidDate]
         public string Date { get; set; }
 
         [Required]
-        [ValidTime]
         public string Time { get; set; }
 
 
@@ -28,18 +26,19 @@ namespace HospitalsTestsAndVaccines.ViewModels
 
 
         [Required]
-        public int ApplicationUser { get; set; }
+        public string ApplicationUser { get; set; }
         public IEnumerable<ApplicationUser> ApplicationUsers { get; set; }
-
-       
+        
         public string Heading { get; set; }
 
         public IEnumerable<Appointment> Appointments { get; set; }
-
+        public string Product { get; set; }
+        public IEnumerable<Product> Products { get; set; }
 
         public DateTime GetStartDateTime()
         {
             return DateTime.Parse(string.Format("{0} {1}", Date, Time));
         }
+
     }
 }
