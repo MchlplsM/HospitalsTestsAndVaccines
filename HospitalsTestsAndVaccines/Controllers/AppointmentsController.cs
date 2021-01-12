@@ -21,8 +21,13 @@ namespace HospitalsTestsAndVaccines.Controllers
 
         }
         // GET: Appointments
-        public ActionResult Index()
+        public ActionResult Index() //Show only 1 patient's appointments NOT EVERYONES
         {
+
+            //var currentlyLoggedInUserId = (((System.Security.Claims.ClaimsPrincipal)System.Web.HttpContext.Current.User).Claims).ToList()[0].Value;
+            //var context = new ApplicationDbContext();
+            //var users = context.Users.Single(e => e.Id == currentlyLoggedInUserId);
+            //return View(users);
             //GetAppointments
             var appointments = _context.Appointments
                 .Include(p => p.ApplicationUser)
@@ -69,16 +74,16 @@ namespace HospitalsTestsAndVaccines.Controllers
             //    return View(viewModel);
 
             //}
+            var currentlyLoggedInUserId = (((System.Security.Claims.ClaimsPrincipal)System.Web.HttpContext.Current.User).Claims).ToList()[0].Value;
             var appointment = new Appointment()
             {
                 StartDateTime = viewModel.GetStartDateTime(),
                 Detail = viewModel.Detail,
                 Status = true,
-                ApplicationUserId = viewModel.ApplicationUser,
-                Product = _context.Products.SingleOrDefault(p => p.Id.ToString() == viewModel.Product),
+                ApplicationUser = _context.Users.SingleOrDefault(p => p.Id == currentlyLoggedInUserId),
+                Product = _context.Products.SingleOrDefault(p => p.Id == viewModel.Product),
                 //Doctor = _context.Doctors.SingleOrDefault(d => d.Id == viewModel.Doctor)
                 //Doctor = _unitOfWork.Doctors.GetDoctor(viewModel.Doctor)
-
 
             };
             //Check if the slot is available
@@ -92,13 +97,13 @@ namespace HospitalsTestsAndVaccines.Controllers
         }
 
 
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
             var appointment = _context.Appointments.Find(id);
             var viewModel = new AppointmentFormViewModel()
             {
                 Heading = "New Appointment",
-                Id = appointment.Id.ToString(),
+                Id = appointment.Id,
                 Date = appointment.StartDateTime.ToString("dd/MM/yyyy"),
                 Time = appointment.StartDateTime.ToString("HH:mm"),
                 Detail = appointment.Detail,
@@ -122,7 +127,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             }
 
             var appointmentInDb = _context.Appointments.Find(viewModel.Id);
-            appointmentInDb.Id = Convert.ToInt32(viewModel.Id);
+            appointmentInDb.Id = viewModel.Id;
             appointmentInDb.StartDateTime = viewModel.GetStartDateTime();
             appointmentInDb.Detail = viewModel.Detail;
             appointmentInDb.Status = viewModel.Status;
@@ -135,7 +140,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         }
 
 
-        public PartialViewResult GetUpcommingAppointments(string id)
+        public PartialViewResult GetUpcommingAppointments()
         {
             DateTime today = DateTime.Now.Date;
 

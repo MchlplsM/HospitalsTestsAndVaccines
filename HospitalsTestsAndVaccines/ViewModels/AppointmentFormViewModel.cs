@@ -9,7 +9,7 @@ namespace HospitalsTestsAndVaccines.ViewModels
 {
     public class AppointmentFormViewModel
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Date { get; set; }
@@ -32,7 +32,7 @@ namespace HospitalsTestsAndVaccines.ViewModels
         public string Heading { get; set; }
 
         public IEnumerable<Appointment> Appointments { get; set; }
-        public string Product { get; set; }
+        public int Product { get; set; }
         public IEnumerable<Product> Products { get; set; }
 
         public DateTime GetStartDateTime()

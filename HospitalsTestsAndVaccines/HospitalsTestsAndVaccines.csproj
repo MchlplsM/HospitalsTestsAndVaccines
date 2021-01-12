@@ -191,51 +191,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101031254587_1st.cs" />
-    <Compile Include="Migrations\202101031254587_1st.Designer.cs">
-      <DependentUpon>202101031254587_1st.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101060921262_DeletedContactDetailsAndHospital.cs" />
-    <Compile Include="Migrations\202101060921262_DeletedContactDetailsAndHospital.Designer.cs">
-      <DependentUpon>202101060921262_DeletedContactDetailsAndHospital.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101061004193_AndAnotherOne.cs" />
-    <Compile Include="Migrations\202101061004193_AndAnotherOne.Designer.cs">
-      <DependentUpon>202101061004193_AndAnotherOne.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101061134125_AndAndAndAnotherOne.cs" />
-    <Compile Include="Migrations\202101061134125_AndAndAndAnotherOne.Designer.cs">
-      <DependentUpon>202101061134125_AndAndAndAnotherOne.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101061135427_AndAndAndAnotherOne1.cs" />
-    <Compile Include="Migrations\202101061135427_AndAndAndAnotherOne1.Designer.cs">
-      <DependentUpon>202101061135427_AndAndAndAnotherOne1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101061137216_AndAndAndAnotherOne2.cs" />
-    <Compile Include="Migrations\202101061137216_AndAndAndAnotherOne2.Designer.cs">
-      <DependentUpon>202101061137216_AndAndAndAnotherOne2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101090916376_NaSouPethanei.cs" />
-    <Compile Include="Migrations\202101090916376_NaSouPethanei.Designer.cs">
-      <DependentUpon>202101090916376_NaSouPethanei.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101091357382_AddedRepositoriesInterfaceForAppointmentsAndOtherModels.cs" />
-    <Compile Include="Migrations\202101091357382_AddedRepositoriesInterfaceForAppointmentsAndOtherModels.Designer.cs">
-      <DependentUpon>202101091357382_AddedRepositoriesInterfaceForAppointmentsAndOtherModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101100912440_AddedModelAttendance.cs" />
-    <Compile Include="Migrations\202101100912440_AddedModelAttendance.Designer.cs">
-      <DependentUpon>202101100912440_AddedModelAttendance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101101159091_anotherOneBitesTheDust.cs" />
-    <Compile Include="Migrations\202101101159091_anotherOneBitesTheDust.Designer.cs">
-      <DependentUpon>202101101159091_anotherOneBitesTheDust.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101111643085_FixedAppointmentCreate.cs" />
-    <Compile Include="Migrations\202101111643085_FixedAppointmentCreate.Designer.cs">
-      <DependentUpon>202101111643085_FixedAppointmentCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\ApplicationUser.cs" />
     <Compile Include="Core\Models\Appointment.cs" />
@@ -246,6 +201,11 @@
     <Compile Include="Core\Models\OrderDetails.cs" />
     <Compile Include="Core\Models\Payment.cs" />
     <Compile Include="Core\Models\Product.cs" />
+    <Compile Include="Migrations\202101121753117_1st.cs" />
+    <Compile Include="Migrations\202101121753117_1st.Designer.cs">
+      <DependentUpon>202101121753117_1st.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AppointmentFormViewModel.cs" />
@@ -356,38 +316,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101031254587_1st.resx">
-      <DependentUpon>202101031254587_1st.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101060921262_DeletedContactDetailsAndHospital.resx">
-      <DependentUpon>202101060921262_DeletedContactDetailsAndHospital.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101061004193_AndAnotherOne.resx">
-      <DependentUpon>202101061004193_AndAnotherOne.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101061134125_AndAndAndAnotherOne.resx">
-      <DependentUpon>202101061134125_AndAndAndAnotherOne.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101061135427_AndAndAndAnotherOne1.resx">
-      <DependentUpon>202101061135427_AndAndAndAnotherOne1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101061137216_AndAndAndAnotherOne2.resx">
-      <DependentUpon>202101061137216_AndAndAndAnotherOne2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101090916376_NaSouPethanei.resx">
-      <DependentUpon>202101090916376_NaSouPethanei.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101091357382_AddedRepositoriesInterfaceForAppointmentsAndOtherModels.resx">
-      <DependentUpon>202101091357382_AddedRepositoriesInterfaceForAppointmentsAndOtherModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101100912440_AddedModelAttendance.resx">
-      <DependentUpon>202101100912440_AddedModelAttendance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101101159091_anotherOneBitesTheDust.resx">
-      <DependentUpon>202101101159091_anotherOneBitesTheDust.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101111643085_FixedAppointmentCreate.resx">
-      <DependentUpon>202101111643085_FixedAppointmentCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101121753117_1st.resx">
+      <DependentUpon>202101121753117_1st.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -416,7 +346,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties content_4bootstrap_1css_1map__JsonSchema="" content_4bootstrap-theme_1min_1css_1map__JsonSchema="" />
+      <UserProperties content_4bootstrap-theme_1min_1css_1map__JsonSchema="" content_4bootstrap_1css_1map__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
