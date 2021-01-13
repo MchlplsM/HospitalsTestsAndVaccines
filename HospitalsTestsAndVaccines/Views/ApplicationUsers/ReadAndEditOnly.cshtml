@@ -11,93 +11,45 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            Ονοματεπώνυμο
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            Ημερομηνία Γέννησης
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateOfBirth)
+            Α.Μ.Κ.Α.
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Amka)
+            Προβλήματα Υγείας
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HealthIssues)
+            Τηλέφωνο
         </th>
-        @*<th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PostalCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.State)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>*@
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
     </tr>
-
-    @*@foreach (var item in Model)
-    {
-        if (item.Id == "998f4c88-2cd8-40ae-a8b6-6dac697b4bfa")
-        {*@
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => Model.FirstName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => Model.LastName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => Model.DateOfBirth)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => Model.Amka)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => Model.HealthIssues)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => Model.HealthIssues)
-    </td>
-
-    <td>
-        @Html.DisplayFor(modelItem => Model.Appointments)
-    </td>
-    @*}*@
-
-    @*<td>
-            @Html.DisplayFor(modelItem => item.Phone)
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => Model.FirstName) @Html.DisplayFor(modelItem => Model.LastName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Address)
+            @Html.DisplayFor(modelItem => Model.DateOfBirth)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.City)
+            @Html.DisplayFor(modelItem => Model.Amka)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PostalCode)
+            @Html.DisplayFor(modelItem => Model.HealthIssues)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.State)
+            @Html.DisplayFor(modelItem => Model.Phone)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>*@
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
-    </td>
-</tr>
-           
-   
-
-    </table>
+            @Html.DisplayFor(modelItem => Model.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+        </td>
+    </tr>
+</table>

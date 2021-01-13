@@ -19,15 +19,12 @@ namespace HospitalsTestsAndVaccines.Controllers
             context = new ApplicationDbContext();
         }
 
-        // GET: ApplicationUsers
+        //-----------------------------------A LIST OF ALL THE CUSTOMERS FOR DEVS AND ADMINS
         [Authorize(Roles = "Dev, HospAdmin")]
         public ActionResult ListOfCustomers(string option, string search) //ONLY Admins and Devs WILL SEE
         {
-            //var context = new ApplicationDbContext();
-            //var users = context.Users.ToList();
             if (option == "FirstName")
             {
-                //Index action method will return a view with a student records based on what a user specify the value in textbox  
                 return View(context.Users.Where(x => x.FirstName.Contains(search) || search == null).ToList());
             }
             else if (option == "LastName")
@@ -38,24 +35,9 @@ namespace HospitalsTestsAndVaccines.Controllers
             {
                 return View(context.Users.Where(x => x.Phone.Contains(search) || search == null).ToList());
             }
-
-            //return View(users);
         }
 
-        //ds
-        [Authorize]
-        public ActionResult Index()
-        {
-            var users = context.Users.ToList();
-            return View(users);
-        }
-
-        //// GET: ApplicationUsers
-        //public ActionResult ListOfCustomers() //ONLY DEVS WILL SEEd
-        //{
-        //    var users = context.Users.ToList();
-        //    return View(users);
-        //}
+        //-----------------------------------THE PATIENT'S PROFILE
         public ActionResult ReadAndEditOnly()
         {
             var currentlyLoggedInUserId = (((System.Security.Claims.ClaimsPrincipal)System.Web.HttpContext.Current.User).Claims).ToList()[0].Value;
@@ -64,20 +46,22 @@ namespace HospitalsTestsAndVaccines.Controllers
             return View(users);
         }
 
+        //-----------------------------------DEVS AND ADMINS CAN SEE THE PATIENTS PROFILES IN DETAIL
+        [Authorize(Roles = "Dev, HospAdmin")]
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
             var person = context.Users.SingleOrDefault(c => c.Id == id);
             if (person == null)
                 return HttpNotFound();
             return View(person);
-
         }
 
+        //-----------------------------------ONLY THE PATIENT AND THE ADMINS CAN ALTER THE PROFILE
+        [Authorize(Roles = "Patient, HospAdmin")]
         public ActionResult Edit(string id)
         {
             var person = context.Users.SingleOrDefault(p => p.Id == id);
@@ -90,17 +74,20 @@ namespace HospitalsTestsAndVaccines.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Phone,Amka,DateOfBirth,HealthIssues,Address,City,PostalCode,State,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName")] ApplicationUser applicationUser)
+        [Authorize(Roles = "Patient, HospAdmin")]
+        public ActionResult Edit(ApplicationUser applicationUser)
         {
             if (ModelState.IsValid)
             {
                 context.Entry(applicationUser).State = EntityState.Modified;
                 context.SaveChanges();
-                return RedirectToAction("UsersWithRoles");
+                return RedirectToAction("ReadAndEditOnly");
             }
             return View(applicationUser);
         }
 
+        //-----------------------------------ONLY THE ADMIN CAN DELETE A PROFILE, UPON REQUEST
+        [Authorize(Roles = "Patient, HospAdmin")]
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -118,6 +105,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         // POST: Customers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Patient, HospAdmin")]
         public ActionResult DeleteConfirmed(string id)
         {
             var person = context.Users.SingleOrDefault(p => p.Id == id);
@@ -126,9 +114,8 @@ namespace HospitalsTestsAndVaccines.Controllers
             return RedirectToAction("UsersWithRoles");
         }
 
-
-
-
+        //-----------------------------------ONLY THE DEV CAN CHECK THE ROLES
+        [Authorize(Roles = "Dev")]
         public ActionResult UsersWithRoles()
         {
             var usersWithRoles = (from user in context.Users
@@ -142,15 +129,12 @@ namespace HospitalsTestsAndVaccines.Controllers
                                                    equals role.Id
                                                    select role.Name).ToList()
                                   }).ToList().Select(p => new Users_in_Role_ViewModel()
-
                                   {
                                       UserId = p.UserId,
                                       Username = p.Username,
                                       Email = p.Email,
                                       Role = string.Join(",", p.RoleNames)
                                   });
-
-
             return View(usersWithRoles);
         }
     }
