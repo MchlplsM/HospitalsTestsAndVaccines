@@ -10,33 +10,33 @@ using HospitalsTestsAndVaccines.Models;
 
 namespace HospitalsTestsAndVaccines.Controllers
 {
-    [AllowAnonymous]
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Products
-        public ActionResult Index()
+        // DEVS ARE CAPABLE OF ADDING/CREATING PRODUCTS
+        [Authorize(Roles = "Dev")]
+        public ActionResult IndexViewForDevs()
         {
             return View(db.Products.ToList());
         }
 
-        // GET: Products/Details/5
-        public ActionResult Details(int? id)
+        //DEFAULT INDEX FOR PATIENTS/ THEY CAN BOOK AN APPOINTMENT
+        public ActionResult IndexViewForPatients()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Product product = db.Products.SingleOrDefault(p => p.Id == id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            return View(product);
+            return View(db.Products.ToList());
+        }
+
+        //DEFAULT INDEX FOR ADMIN & VISITORS THAT HAVENT LOGGED IN/ THEY CAN ONLY SEE THE PRODUCTS
+        [AllowAnonymous]
+        public ActionResult IndexViewDefault()
+        {
+            return View(db.Products.ToList());
         }
 
         // GET: Products/Create
+        //---------------------------ONLY DEVS WILL BE ABLE TO ADD PRODUCTS--------------------------------
+        [Authorize(Roles = "Dev")]
         public ActionResult Create()
         {
             return View();
@@ -55,7 +55,6 @@ namespace HospitalsTestsAndVaccines.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(product);
         }
 
@@ -89,23 +88,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             }
             return View(product);
         }
-        //----------------------------------BOOK A DATE
-
-        public ActionResult BookADate(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Product product = db.Products.SingleOrDefault(p => p.Id == id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            return View(product);
-
-        }
-
+       
         // POST: Products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.

@@ -201,9 +201,9 @@
     <Compile Include="Core\Models\OrderDetails.cs" />
     <Compile Include="Core\Models\Payment.cs" />
     <Compile Include="Core\Models\Product.cs" />
-    <Compile Include="Migrations\202101121753117_1st.cs" />
-    <Compile Include="Migrations\202101121753117_1st.Designer.cs">
-      <DependentUpon>202101121753117_1st.cs</DependentUpon>
+    <Compile Include="Migrations\202101131002185_SeedUsers.cs" />
+    <Compile Include="Migrations\202101131002185_SeedUsers.Designer.cs">
+      <DependentUpon>202101131002185_SeedUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -279,9 +279,8 @@
     <Content Include="Views\Orders\New.cshtml" />
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Products\Delete.cshtml" />
-    <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
-    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\IndexViewForPatients.cshtml" />
     <Content Include="Views\Products\BookADate.cshtml" />
     <Content Include="Views\Customers\ReadAndEditOnly.cshtml" />
     <Content Include="Views\ApplicationUsers\Create.cshtml" />
@@ -297,6 +296,8 @@
     <Content Include="Views\Appointments\Delete.cshtml" />
     <Content Include="Views\Appointments\Edit.cshtml" />
     <Content Include="Views\Appointments\Index.cshtml" />
+    <Content Include="Views\Products\IndexViewForDevs.cshtml" />
+    <Content Include="Views\Products\IndexViewDefault.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -316,8 +317,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101121753117_1st.resx">
-      <DependentUpon>202101121753117_1st.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101131002185_SeedUsers.resx">
+      <DependentUpon>202101131002185_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

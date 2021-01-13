@@ -7,12 +7,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Κατάλογος Ασθενών</h2>
 
 @using (Html.BeginForm("ListOfCustomers", "ApplicationUsers", FormMethod.Get))
 {
-    //the following are search options
-    <b> Search Option: </b>@Html.RadioButton("option", "FirstName") <text>Όνομα</text> @Html.RadioButton("option", "LastName") <text>Επίθετο</text> @Html.RadioButton("option", "Phone") <text>Τηλέφωνο</text>
+    //---------------------------------SEARCH OPTIONS (ΟΝΟΜΑ, ΕΠΙΘΕΤΟ, ΤΗΛΕΦΩΝΟ)-------------------------------------------------
+    <b> Ευρετήριο: </b>@Html.RadioButton("option", "FirstName") <text>Όνομα</text> @Html.RadioButton("option", "LastName") <text>Επίθετο</text> @Html.RadioButton("option", "Phone") <text>Τηλέφωνο</text>
     @Html.TextBox("search")
     <input type="submit"
            name="submit"
@@ -40,27 +40,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Phone)
         </th>
-        @* <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PostalCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.State)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>*@
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        if (item.Id != "288364d7-e4cb-470f-bb58-c44ec1ee390a" && item.Id != "91f05c7a-fbc9-4ede-944e-f7a7e348de70")
+        if (item.Id != "207758ff-59e1-4cb9-a2ad-32efb936138c" && item.Id != "d8417601-4cbb-4281-87d6-43b61a894e7d")
         {
             <tr>
                 <td>

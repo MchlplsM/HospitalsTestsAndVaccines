@@ -5,11 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Διαθέσιμα Προϊόντα</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -40,21 +37,12 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                @Html.DisplayFor(modelItem => item.Price)€
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
                 @Html.ActionLink("Κλείσε Ραντεβού", "BookADate", new{ id = item.Id })
             </td>
         </tr>
     }
 
 </table>
-
-@*< p > < img src = "~/Images/@m.Url"
-    style = "overflow: hidden; position: relative; width:200px; height:200px;" / > < /p>   < p > < a class = "btn btn-default"
-    href = "" > View More» < /a><p>
-    <span class="glyphicon glyphicon-shopping-cart" style="color:green"></span> < /p>   < /p>   < /div>
-    } < /div>*@

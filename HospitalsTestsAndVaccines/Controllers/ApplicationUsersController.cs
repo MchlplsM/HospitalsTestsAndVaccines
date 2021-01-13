@@ -13,15 +13,15 @@ namespace HospitalsTestsAndVaccines.Controllers
 {
     public class ApplicationUsersController : Controller
     {
-        //private ApplicationDbContext db = new ApplicationDbContext();
         private ApplicationDbContext context;
         public ApplicationUsersController()
         {
             context = new ApplicationDbContext();
         }
+
         // GET: ApplicationUsers
-        [Authorize(Roles = "Devs, HospAdmin")]
-        public ActionResult ListOfCustomers(string option, string search) //ONLY DEVS WILL SEE
+        [Authorize(Roles = "Dev, HospAdmin")]
+        public ActionResult ListOfCustomers(string option, string search) //ONLY Admins and Devs WILL SEE
         {
             //var context = new ApplicationDbContext();
             //var users = context.Users.ToList();
