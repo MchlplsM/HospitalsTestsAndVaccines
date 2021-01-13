@@ -18,7 +18,7 @@ namespace HospitalsTestsAndVaccines.Controllers
 
         public AppointmentsController()
         {
-
+           // "Comment";
         }
         // GET: Appointments
         public ActionResult Index()
@@ -92,7 +92,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index", "Appointments");
         }
-
+        
 
         public ActionResult Edit(int id)
         {
