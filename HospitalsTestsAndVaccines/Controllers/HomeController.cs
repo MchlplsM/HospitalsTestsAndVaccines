@@ -34,6 +34,11 @@ namespace HospitalsTestsAndVaccines.Controllers
             return View();
         }
 
+        public ActionResult Chat()
+        {
+            return View();
+        }
+
         //------------------------------
         //public  JsonResult GetEvents()
         //{
