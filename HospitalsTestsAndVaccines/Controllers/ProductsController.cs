@@ -22,6 +22,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         }
 
         //DEFAULT INDEX FOR PATIENTS/ THEY CAN BOOK AN APPOINTMENT
+        [Authorize(Roles = "Patient")]
         public ActionResult IndexViewForPatients()
         {
             return View(db.Products.ToList());
@@ -47,6 +48,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Dev")]
         public ActionResult Create([Bind(Include = "Id,ProductName,ProductCategory,Description,Price")] Product product)
         {
             if (ModelState.IsValid)
@@ -59,6 +61,8 @@ namespace HospitalsTestsAndVaccines.Controllers
         }
 
         // GET: Products/Edit/5
+        //---------------------------ONLY DEVS WILL BE ABLE TO EDIT PRODUCTS--------------------------------
+        [Authorize(Roles = "Dev")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -76,6 +80,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         // POST: Products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Dev")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,ProductName,ProductCategory,Description,Price")] Product product)
@@ -88,25 +93,10 @@ namespace HospitalsTestsAndVaccines.Controllers
             }
             return View(product);
         }
-       
-        // POST: Products/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult BookADate([Bind(Include = "Id,ProductName,ProductCategory,Description,Price")] Product product)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(product);
-        }
 
 
         // GET: Products/Delete/5
+        [Authorize(Roles = "Dev")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -122,6 +112,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         }
 
         // POST: Products/Delete/5
+        [Authorize(Roles = "Dev")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

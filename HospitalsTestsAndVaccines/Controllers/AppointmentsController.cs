@@ -15,85 +15,66 @@ namespace HospitalsTestsAndVaccines.Controllers
     public class AppointmentsController : Controller
     {
         ApplicationDbContext _context = new ApplicationDbContext();
-
         public AppointmentsController()
         {
 
         }
-        // GET: Appointments
-        public ActionResult Index() //Show only 1 patient's appointments NOT EVERYONES
-        {
 
-            //var currentlyLoggedInUserId = (((System.Security.Claims.ClaimsPrincipal)System.Web.HttpContext.Current.User).Claims).ToList()[0].Value;
-            //var context = new ApplicationDbContext();
-            //var users = context.Users.Single(e => e.Id == currentlyLoggedInUserId);
-            //return View(users);
-            //GetAppointments
+        //--------------------------------Show only 1 patient's appointments NOT EVERYONES
+        public ActionResult AppointmentsOfPatient() 
+        {
             var appointments = _context.Appointments
                 .Include(p => p.ApplicationUser)
                 .Include(p => p.Product)
                 .ToList();
             return View(appointments);
         }
-        public ActionResult Details(string id)
+
+        //--------------------------------Show all patients appointments
+        public ActionResult AllAppointments() 
         {
-            var appointment = _context.Appointments
-                .Where(p => p.ApplicationUserId == id)
+            var appointments = _context.Appointments
                 .Include(p => p.ApplicationUser)
+                .Include(p => p.Product)
                 .ToList();
-            return View("_AppointmentPartial", appointment);
+            return View(appointments);
         }
 
+        //--------------------------------ONLY PATIENT can create an appointment
+        [Authorize(Roles = "Patient")]
         public ActionResult Create(string id)
         {
             var viewModel = new AppointmentFormViewModel
             {
-                ApplicationUser = id,
-                //ApplicationUsers = _context.ApplicationUsers.ToList(),
+                 ApplicationUser = id,
                 Products = _context.Products.ToList(),
+                Heading = "New Appointment"
+                //ApplicationUsers = _context.ApplicationUsers.ToList(),
                 // AvailableDoctor
                 //Doctors = _context.Doctors
                 //.Where(a => a.IsAvailable == true)
                 //.ToList(),
-
-                Heading = "New Appointment"
             };
             return View(viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Patient")]
         public ActionResult Create(AppointmentFormViewModel viewModel)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    // AvailableDoctor
-            //    viewModel.Doctors = _context.Doctors
-            //    .Where(a => a.IsAvailable == true)
-            //    .ToList();
-            //    return View(viewModel);
-
-            //}
             var currentlyLoggedInUserId = (((System.Security.Claims.ClaimsPrincipal)System.Web.HttpContext.Current.User).Claims).ToList()[0].Value;
             var appointment = new Appointment()
             {
                 StartDateTime = viewModel.GetStartDateTime(),
                 Detail = viewModel.Detail,
-                Status = true,
+                Status = false,
                 ApplicationUser = _context.Users.SingleOrDefault(p => p.Id == currentlyLoggedInUserId),
-                Product = _context.Products.SingleOrDefault(p => p.Id == viewModel.Product),
-                //Doctor = _context.Doctors.SingleOrDefault(d => d.Id == viewModel.Doctor)
-                //Doctor = _unitOfWork.Doctors.GetDoctor(viewModel.Doctor)
-
+                Product = _context.Products.SingleOrDefault(p => p.Id == viewModel.Product)
             };
-            //Check if the slot is available
-            //if (_unitOfWork.Appointments.ValidateAppointment(appointment.StartDateTime))
-            //if (_context.Appointments.Any(a => a.StartDateTime == appntDate && a.DoctorId == id))
-            // return View("InvalidAppointment");
-
             _context.Appointments.Add(appointment);
             _context.SaveChanges();
-            return RedirectToAction("Index", "Appointments");
+            return RedirectToAction("AppointmentsOfPatient", "Appointments");
         }
 
 
