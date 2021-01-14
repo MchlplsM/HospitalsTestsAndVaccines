@@ -61,6 +61,9 @@
       <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -193,8 +196,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Core\Models\Attendance.cs" />
+    <Compile Include="Core\PayPalConfiguration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -211,6 +216,10 @@
     <Compile Include="Migrations\202101131640582_SeedUsers.cs" />
     <Compile Include="Migrations\202101131640582_SeedUsers.Designer.cs">
       <DependentUpon>202101131640582_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101141624170_AnotherOne.cs" />
+    <Compile Include="Migrations\202101141624170_AnotherOne.Designer.cs">
+      <DependentUpon>202101141624170_AnotherOne.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -246,6 +255,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Payments\PaymentWithPayPal.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -300,6 +310,8 @@
     <Content Include="Views\Products\IndexViewDefault.cshtml" />
     <Content Include="Views\Appointments\AllAppointments.cshtml" />
     <Content Include="Views\Home\Chat.cshtml" />
+    <Content Include="Views\Payments\FailureView.cshtml" />
+    <Content Include="Views\Payments\SuccessView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -321,6 +333,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202101131640582_SeedUsers.resx">
       <DependentUpon>202101131640582_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141624170_AnotherOne.resx">
+      <DependentUpon>202101141624170_AnotherOne.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -349,7 +364,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties content_4bootstrap_1css_1map__JsonSchema="" content_4bootstrap-theme_1min_1css_1map__JsonSchema="" />
+      <UserProperties content_4bootstrap-theme_1min_1css_1map__JsonSchema="" content_4bootstrap_1css_1map__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
