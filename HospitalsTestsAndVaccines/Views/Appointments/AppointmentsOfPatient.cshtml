@@ -25,27 +25,39 @@
                     {
                         if (item.ApplicationUserId == currentlyLoggedInUserId)
                         {
-                            <tr>
-                                <td>@item.ApplicationUser.FirstName @item.ApplicationUser.LastName</td>
-                                <td>@item.Product.ProductName</td>
-                                <td>@item.StartDateTime</td>
-                                <td>@item.Detail</td>
-                                <td>
-                                    @{ if (item.Status == true)
-                                        {
-                                            <a href="#" style="padding: 3px 10px 3px 10px; background-color:green " class="badge" readonly>Approved</a> }
-                                        else
-                                        {
-                                        <a href="#" style="padding: 3px 10px 3px 10px; background-color:darkorange" class="badge" readonly>Pending</a> } }
-                                </td>
-                                <td>
-                                
-                                <a href="@Url.Action("PaymentWithPaypal", "Payments") " btn btn-success">Payment</a>
-                            </td>
-                                 @*<td>
-                                    <a href="@Url.Action("Edit", "Appointments", new { id = item.Id })" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>Edit</a>
-                                </td>*@
-                            </tr>
+                    <tr>
+                        <td>@item.ApplicationUser.FirstName @item.ApplicationUser.LastName</td>
+                        <td>@item.Product.ProductName</td>
+                        <td>@item.StartDateTime</td>
+                        <td>@item.Detail</td>
+                        <td>
+                            @{ if (item.Status == true)
+                                {
+                                    <a href="#" style="padding: 3px 10px 3px 10px; background-color:green " class="badge" readonly>Approved</a> }
+                                else
+                                {
+                                    <a href="#" style="padding: 3px 10px 3px 10px; background-color:darkorange" class="badge" readonly>Pending</a> } }
+                        </td>
+
+
+
+
+                        @*<td>
+
+                            <a href="@Url.Action("PaymentWithPaypal", "Payments") " btn btn-success">Payment</a>
+                        </td>*@
+
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="T72BVP5E72ZTW">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/el_GR/i/scr/pixel.gif" width="1" height="1">
+                        </form>
+                            
+                        @*<td>
+                                <a href="@Url.Action("Edit", "Appointments", new { id = item.Id })" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>Edit</a>
+                           </td>*@
+                    </tr>
                         }
                      }
                 </tbody>

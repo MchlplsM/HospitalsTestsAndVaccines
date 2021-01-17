@@ -14,7 +14,7 @@ namespace HospitalsTestsAndVaccines.Controllers
 {
     public class AppointmentsController : Controller
     {
-        ApplicationDbContext _context = new ApplicationDbContext();
+        ApplicationDbContext context = new ApplicationDbContext();
         public AppointmentsController()
         {
 
@@ -23,7 +23,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         //--------------------------------Show only 1 patient's appointments NOT EVERYONES
         public ActionResult AppointmentsOfPatient() 
         {
-            var appointments = _context.Appointments
+            var appointments = context.Appointments
                 .Include(p => p.ApplicationUser)
                 .Include(p => p.Product)
                 .ToList();
@@ -31,9 +31,10 @@ namespace HospitalsTestsAndVaccines.Controllers
         }
 
         //--------------------------------Show all patients appointments
+        [Authorize(Roles = "HospAdmin")]
         public ActionResult AllAppointments() 
         {
-            var appointments = _context.Appointments
+            var appointments = context.Appointments
                 .Include(p => p.ApplicationUser)
                 .Include(p => p.Product)
                 .ToList();
@@ -47,7 +48,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             var viewModel = new AppointmentFormViewModel
             {
                  ApplicationUser = id,
-                Products = _context.Products.ToList(),
+                Products = context.Products.ToList(),
                 Heading = "New Appointment"
                 //ApplicationUsers = _context.ApplicationUsers.ToList(),
                 // AvailableDoctor
@@ -69,63 +70,60 @@ namespace HospitalsTestsAndVaccines.Controllers
                 StartDateTime = viewModel.GetStartDateTime(),
                 Detail = viewModel.Detail,
                 Status = false,
-                ApplicationUser = _context.Users.SingleOrDefault(p => p.Id == currentlyLoggedInUserId),
-                Product = _context.Products.SingleOrDefault(p => p.Id == viewModel.Product)
+                ApplicationUser = context.Users.SingleOrDefault(p => p.Id == currentlyLoggedInUserId),
+                Product = context.Products.SingleOrDefault(p => p.Id == viewModel.Product)
             };
-            _context.Appointments.Add(appointment);
-            _context.SaveChanges();
+            context.Appointments.Add(appointment);
+            context.SaveChanges();
             return RedirectToAction("AppointmentsOfPatient", "Appointments");
         }
 
-
+        //--------------------------------ONLY HospADMIN can edit the Appointment -> Accept/Decline an appointment
         public ActionResult Edit(int id)
         {
-            var appointment = _context.Appointments.Find(id);
-            var viewModel = new AppointmentFormViewModel()
+            var appointment = context.Appointments.SingleOrDefault(p => p.Id == id);
+            //OR
+            //var appointment = context.Appointments.Find(id);
+            if (appointment == null)
             {
-                Heading = "New Appointment",
-                Id = appointment.Id,
-                Date = appointment.StartDateTime.ToString("dd/MM/yyyy"),
-                Time = appointment.StartDateTime.ToString("HH:mm"),
-                Detail = appointment.Detail,
-                Status = appointment.Status,
-                ApplicationUser = appointment.ApplicationUserId,
-                //Patients = _unitOfWork.Patients.GetPatients(),
-                //Doctors = _context.Doctors.ToList()
-            };
-            return View(viewModel);
+                return HttpNotFound();
+            }
+            return View(appointment);
         }
+      
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(AppointmentFormViewModel viewModel)
+        public ActionResult Edit(Appointment appointment)
         {
-            if (!ModelState.IsValid)
-            {
-                //viewModel.Doctors = _context.Doctors.ToList();
-                viewModel.ApplicationUsers = _context.Users.ToList();
-                return View(viewModel);
-            }
-
-            var appointmentInDb = _context.Appointments.Find(viewModel.Id);
-            appointmentInDb.Id = viewModel.Id;
-            appointmentInDb.StartDateTime = viewModel.GetStartDateTime();
-            appointmentInDb.Detail = viewModel.Detail;
-            appointmentInDb.Status = viewModel.Status;
-            appointmentInDb.ApplicationUserId = viewModel.ApplicationUser;
-            //appointmentInDb.DoctorId = viewModel.Doctor;
-
-            _context.SaveChanges();
-            return RedirectToAction("Index");
-
+            var appointmentInDb = context.Appointments.Find(appointment.Id);
+            appointmentInDb.Id = appointment.Id;
+            appointmentInDb.StartDateTime = appointment.StartDateTime;
+            appointmentInDb.Detail = appointment.Detail;
+            appointmentInDb.Status = appointment.Status;
+            appointmentInDb.ApplicationUserId = appointment.ApplicationUserId;
+            context.SaveChanges();
+            return RedirectToAction("AllAppointments");
         }
+
+        //var appointment = new Appointment()
+        //{
+        //    StartDateTime = viewModel,
+        //    Detail = viewModel.Detail,
+        //    Status = false,
+        //    ApplicationUser = context.Users.SingleOrDefault(p => p.Id == viewModel.ApplicationUser),
+        //    Product = context.Products.SingleOrDefault(p => p.Id == viewModel.Product)
+        //};
+        //context.Appointments.Add(appointment);
+        //    context.SaveChanges();
+        //    return RedirectToAction("AppointmentsOfPatient", "Appointments");
 
 
         public PartialViewResult GetUpcommingAppointments()
         {
             DateTime today = DateTime.Now.Date;
 
-            var appointments = _context.Appointments
+            var appointments = context.Appointments
                 .Where(/*d => d.DoctorId == id && */d => d.StartDateTime >= today)
                 .Include(p => p.ApplicationUser)
                 .OrderBy(d => d.StartDateTime)

@@ -33,13 +33,13 @@
                                         <a href="#" style="padding: 3px 10px 3px 10px; background-color:green " class="badge" readonly>Approved</a> }
                                     else
                                     {
-                                    <a href="#" style="padding: 3px 10px 3px 10px; background-color:darkorange" class="badge" readonly>Pending</a> } }
+                                        <a href="#" style="padding: 3px 10px 3px 10px; background-color:darkorange" class="badge" readonly>Pending</a> } }
                             </td>
                             <td>
                                 <a href="@Url.Action("Edit", "Appointments", new { id = item.Id })" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>Edit</a>
                             </td>
                         </tr>
-                     }
+                    }
                 </tbody>
             </table>
             <table>
@@ -61,7 +61,7 @@
                     </tr>
                     <tr>
                         <td>
-                           @{<a href="#" style="padding: 3px 10px 3px 10px; background-color:green" class="badge" readonly>Approved</a>}
+                            @{<a href="#" style="padding: 3px 10px 3px 10px; background-color:green" class="badge" readonly>Approved</a>}
                         </td>
                         <td>
                             Το Ραντεβού σας έχει εγκριθεί.
@@ -73,10 +73,23 @@
     </div>
 </div>
 
+@*@section scripts{
+        <script>
+            $(document).ready(function () {
+                $('#appointments').DataTable();
+            });
+        </script>
+    }*@
+
 @section scripts{
     <script>
-        $(document).ready(function () {
-            $('#appointments').DataTable();
-        });
-    </script>
-}
+        $(function(){
+            $('#UsersWithRoles').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true
+            });
+});</script>}
