@@ -2,7 +2,7 @@
 {
     using System;
     using System.Data.Entity.Migrations;
-
+    
     public partial class SeedUsers : DbMigration
     {
         public override void Up()
@@ -27,8 +27,9 @@ INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'cfc121a5-0477
 INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'f531fada-6f77-42b1-ab1d-1faedfd30ad7', N'5d055f55-ae7b-4342-bccb-72cdace6c999')
 
 ");
-        }
-
+}
+    
+        
         public override void Down()
         {
         }

@@ -13,7 +13,7 @@ namespace HospitalsTestsAndVaccines.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202101131640582_SeedUsers"; }
+            get { return "202101171530386_SeedUsers"; }
         }
         
         string IMigrationMetadata.Source
