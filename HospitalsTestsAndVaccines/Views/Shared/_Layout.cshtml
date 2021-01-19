@@ -105,7 +105,34 @@
                                         <li class="nav-item">
                                             <a class="page-scroll" href="#contact">Contact</a>
                                         </li>
-                                        <li class="nav-item active">@Html.ActionLink("Products", "IndexViewDefault", "Products")</li>
+                                        @if (!User.IsInRole("Patient") && !User.IsInRole("Dev") && !User.IsInRole("HospAdmin"))
+                                        {
+                                            <li class="nav-item active">@Html.ActionLink("About", "About", "Home")</li>
+                                            <li class="nav-item active">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                            <li class="nav-item active">@Html.ActionLink("Products", "IndexViewDefault", "Products")</li>
+                                        }
+                                        @if (User.IsInRole("Patient"))
+                                        {
+                                            <li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>
+                                            <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                            <li class="nav-item">@Html.ActionLink("Products", "IndexViewForPatients", "Products")</li>
+                                            <li class="nav-item">@Html.ActionLink("Appointments", "AppointmentsOfPatient", "Appointments")</li>
+                                            <li class="nav-item">@Html.ActionLink("Profile", "ReadAndEditOnly", "ApplicationUsers")</li>
+                                        }
+                                        @if (User.IsInRole("Dev"))
+                                        {
+                                            <li class="nav-item">@Html.ActionLink("Products", "IndexViewForDevs", "Products")</li>
+                                            <li class="nav-item">@Html.ActionLink("Appointments", "AllAppointments", "Appointments")</li>
+                                            <li class="nav-item">@Html.ActionLink("Patients", "ListOfCustomers", "ApplicationUsers")</li>
+                                        }
+                                        @if (User.IsInRole("HospAdmin"))
+                                        {
+                                            <li class="nav-item">@Html.ActionLink("Products", "IndexViewDefault", "Products")</li>
+                                            <li class="nav-item">@Html.ActionLink("Appointments", "AllAppointments", "Appointments")</li>
+                                            <li class="nav-item">@Html.ActionLink("Patients", "ListOfCustomers", "ApplicationUsers")</li>
+                                        }
+
+
 
                                         <li class="nav-item active"> @Html.Partial("_LoginPartial")</li>
                                     </ul>
@@ -142,49 +169,3 @@
 </body>
 </html>
 
-
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            @Html.ActionLink("MetroHospital.gr", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                @if (!User.IsInRole("Patient") && !User.IsInRole("Dev") && !User.IsInRole("HospAdmin"))
-                {
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Products", "IndexViewDefault", "Products")</li>
-                }
-                @if (User.IsInRole("Patient"))
-                {
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Products", "IndexViewForPatients", "Products")</li>
-                    <li>@Html.ActionLink("Appointments", "AppointmentsOfPatient", "Appointments")</li>
-                    <li>@Html.ActionLink("Profile", "ReadAndEditOnly", "ApplicationUsers")</li>
-                }
-                @if (User.IsInRole("Dev"))
-                {
-                    <li>@Html.ActionLink("Products", "IndexViewForDevs", "Products")</li>
-                    <li>@Html.ActionLink("Appointments", "AllAppointments", "Appointments")</li>
-                    <li>@Html.ActionLink("Patients", "ListOfCustomers", "ApplicationUsers")</li>
-                }
-                @if (User.IsInRole("HospAdmin"))
-                {
-                    <li>@Html.ActionLink("Products", "IndexViewDefault", "Products")</li>
-                    <li>@Html.ActionLink("Appointments", "AllAppointments", "Appointments")</li>
-                    <li>@Html.ActionLink("Patients", "ListOfCustomers", "ApplicationUsers")</li>
-                }
-
-            </ul>
-            @Html.Partial("_LoginPartial")
-
-        </div>
-    </div>
-</div>
