@@ -4,19 +4,21 @@
     ViewBag.Title = "Home Page";
 }
 
+
+
 <style>
-    #Test{
-        background-position:center;
-        background-repeat: no-repeat;
-        background-size:cover;
-        width:100%;
-        height:100%
+    .preloader1 {
+        position:absolute;
+        top: 0px;
+        left: 0;
+        height: 70%;
+        width: 100%;
         
     }
 </style>
 
-<div id="Test">
 
+<div class="preloader1">
     <div class="slider-wrapper">
         <!-- ========================= slider-section start ========================= -->
         <section class="slider-section">
@@ -42,6 +44,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="single-slider img-bg" style="background-image:url('Content/assets/img/slider/slider-2.jpg');">
                     <div class="container">
                         <div class="row">
@@ -66,6 +69,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="single-slider img-bg" style="background-image:url('Content/assets/img/slider/slider-3.jpg');">
                     <div class="container">
                         <div class="row">
@@ -95,26 +99,7 @@
 
 
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>LiveChat</h2>
-            <p>Click to talk with one of our representatives: </p>
-            <p class="button">
-                @Html.ActionLink("LiveChat", "Chat", "Home", new { target = "_blank" })
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </div>
-    </div>
-</div>
+
     <!--========================= we-do-section start========================= -->
     <section class="we-do-section pt-150">
         <div class="shape shape-1">
@@ -840,8 +825,11 @@
             </div>
         </div>
     </footer>
-    <!-- ========================= footer end ========================= -->
-    <!-- ========================= scroll-top ========================= -->
-    <a href="#" class="scroll-top">
-        <i class="lni lni-arrow-up"></i>
-    </a>
+</div>
+
+<!-- ========================= footer end ========================= -->
+<!-- ========================= scroll-top ========================= -->
+<a href="#" class="scroll-top">
+    <i class="lni lni-arrow-up"></i>
+</a>
+
