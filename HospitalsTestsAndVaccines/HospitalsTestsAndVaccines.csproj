@@ -217,9 +217,9 @@
     <Compile Include="Migrations\202101171530112_Initial.Designer.cs">
       <DependentUpon>202101171530112_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101171530386_SeedUsers.cs" />
-    <Compile Include="Migrations\202101171530386_SeedUsers.Designer.cs">
-      <DependentUpon>202101171530386_SeedUsers.cs</DependentUpon>
+    <Compile Include="Migrations\202101191005512_seedUsers.cs" />
+    <Compile Include="Migrations\202101191005512_seedUsers.Designer.cs">
+      <DependentUpon>202101191005512_seedUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -232,6 +232,51 @@
     <Compile Include="ViewModels\ValidTime.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\animate.css" />
+    <Content Include="Content\assets\css\bootstrap-5.0.5-alpha.min.css" />
+    <Content Include="Content\assets\css\LineIcons.2.0.css" />
+    <Content Include="Content\assets\css\main.css" />
+    <Content Include="Content\assets\css\tiny-slider.css" />
+    <Content Include="Content\assets\fonts\LineIcons.svg" />
+    <Content Include="Content\assets\img\about\about-img.png" />
+    <Content Include="Content\assets\img\bg\footer-bg.jpg" />
+    <Content Include="Content\assets\img\bg\subscribe-bg.jpg" />
+    <Content Include="Content\assets\img\blog\blog-1.png" />
+    <Content Include="Content\assets\img\blog\blog-2.png" />
+    <Content Include="Content\assets\img\blog\blog-3.png" />
+    <Content Include="Content\assets\img\faq\faq-img.jpg" />
+    <Content Include="Content\assets\img\favicon.ico" />
+    <Content Include="Content\assets\img\logo\logo.svg" />
+    <Content Include="Content\assets\img\service\service-1.png" />
+    <Content Include="Content\assets\img\shapes\shape-1.svg" />
+    <Content Include="Content\assets\img\shapes\shape-2.svg" />
+    <Content Include="Content\assets\img\shapes\shape-3.svg" />
+    <Content Include="Content\assets\img\shapes\shape-4.svg" />
+    <Content Include="Content\assets\img\shapes\shape-5.svg" />
+    <Content Include="Content\assets\img\shapes\shape-6.svg" />
+    <Content Include="Content\assets\img\shapes\shape-7.svg" />
+    <Content Include="Content\assets\img\shapes\shape-8.svg" />
+    <Content Include="Content\assets\img\slider\slider-1.jpg" />
+    <Content Include="Content\assets\img\slider\slider-2.jpg" />
+    <Content Include="Content\assets\img\slider\slider-3.jpg" />
+    <Content Include="Content\assets\img\team\team-1.png" />
+    <Content Include="Content\assets\img\team\team-2.png" />
+    <Content Include="Content\assets\img\team\team-3.png" />
+    <Content Include="Content\assets\img\team\team-4.png" />
+    <Content Include="Content\assets\img\testimonial\testimonial-1.png" />
+    <Content Include="Content\assets\img\testimonial\testimonial-2.png" />
+    <Content Include="Content\assets\img\testimonial\testimonial-3.png" />
+    <Content Include="Content\assets\img\testimonial\testimonial-4.png" />
+    <Content Include="Content\assets\img\testimonial\testimonial-5.png" />
+    <Content Include="Content\assets\img\we-do\graph-img.svg" />
+    <Content Include="Content\assets\img\we-do\we-do-1.svg" />
+    <Content Include="Content\assets\img\we-do\we-do-2.svg" />
+    <Content Include="Content\assets\img\we-do\we-do-3.svg" />
+    <Content Include="Content\assets\img\we-do\we-do-4.svg" />
+    <Content Include="Content\assets\js\bootstrap.bundle-5.0.0.alpha-min.js" />
+    <Content Include="Content\assets\js\main.js" />
+    <Content Include="Content\assets\js\tiny-slider.js" />
+    <Content Include="Content\assets\js\wow.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -382,6 +427,24 @@
     <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js.map" />
     <Content Include="Content\vendor\jquery\jquery.min.map" />
     <Content Include="Content\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Content\assets\.DS_Store" />
+    <Content Include="Content\assets\css\.DS_Store" />
+    <Content Include="Content\assets\css\main.css.map" />
+    <Content Include="Content\assets\fonts\LineIcons.eot" />
+    <Content Include="Content\assets\fonts\LineIcons.ttf" />
+    <Content Include="Content\assets\fonts\LineIcons.woff" />
+    <Content Include="Content\assets\fonts\LineIcons.woff2" />
+    <Content Include="Content\assets\img\.DS_Store" />
+    <Content Include="Content\assets\img\about\.DS_Store" />
+    <Content Include="Content\assets\img\bg\.DS_Store" />
+    <Content Include="Content\assets\img\blog\.DS_Store" />
+    <Content Include="Content\assets\img\faq\.DS_Store" />
+    <Content Include="Content\assets\img\logo\.DS_Store" />
+    <Content Include="Content\assets\img\service\.DS_Store" />
+    <Content Include="Content\assets\img\slider\.DS_Store" />
+    <Content Include="Content\assets\img\team\.DS_Store" />
+    <Content Include="Content\assets\img\testimonial\.DS_Store" />
+    <Content Include="Content\assets\js\.DS_Store" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -538,8 +601,8 @@
     <EmbeddedResource Include="Migrations\202101171530112_Initial.resx">
       <DependentUpon>202101171530112_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101171530386_SeedUsers.resx">
-      <DependentUpon>202101171530386_SeedUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101191005512_seedUsers.resx">
+      <DependentUpon>202101191005512_seedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
