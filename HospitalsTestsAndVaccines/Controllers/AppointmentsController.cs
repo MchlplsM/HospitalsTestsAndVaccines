@@ -79,7 +79,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         }
 
         //--------------------------------ONLY HospADMIN can edit the Appointment -> Accept/Decline an appointment
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
             var appointment = context.Appointments.SingleOrDefault(p => p.Id == id);
             //OR
