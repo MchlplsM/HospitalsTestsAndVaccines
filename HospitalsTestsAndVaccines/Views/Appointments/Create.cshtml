@@ -63,7 +63,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Time<span class="required">*</span> </label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.TextBoxFor(m => m.Time, new { @class = "form-control time" })
+                        @Html.TextBoxFor(m => m.Time, new { @type = "time", @class = "form-control timepicker" })
                         @Html.ValidationMessageFor(m => m.Time)
                     </div>
                 </div>
@@ -90,9 +90,13 @@
 
 </div>}
 
+<script type="text/javascript">
+    $('.clockpicker').clockpicker();
+</script>
+
 
 @section scripts{
-    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
     <script>
         $(document).ready(function () {
             $('#divAppointments').hide();
@@ -130,6 +134,7 @@
 
 
         });
+
 
         $('.date').datepicker({
             minDate: 0,
