@@ -239,7 +239,7 @@
     <Content Include="Content\assets\css\main.css" />
     <Content Include="Content\assets\css\tiny-slider.css" />
     <Content Include="Content\assets\fonts\LineIcons.svg" />
-    <Content Include="Content\assets\img\about\about-img.png" />
+    <Content Include="Content\assets\img\about\doc.png" />
     <Content Include="Content\assets\img\bg\footer-bg.jpg" />
     <Content Include="Content\assets\img\bg\subscribe-bg.jpg" />
     <Content Include="Content\assets\img\blog\blog-1.png" />
