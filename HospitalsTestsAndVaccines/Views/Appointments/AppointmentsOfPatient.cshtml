@@ -8,8 +8,11 @@
             <div class="clearfix"></div>
         </div>
 
+
+        <button type="button" class="btn btn-light">@Html.ActionLink("Create New", "Create")</button>
+
         <div class="x_content">
-            <table id="appointments" class=" data table table-striped no-margin">
+            <table id="appointments" class="table table-borderless">
                 <thead>
                     <tr>
                         <th>Όνομα Επισκέπτη</th>
@@ -17,6 +20,7 @@
                         <th>Ημερομηνία/Ώρα Ραντεβού</th>
                         <th>Πληροφορίες</th>
                         <th>Στάτους</th>
+                        <th>Πληρωμή</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,6 +50,7 @@
 
                             <a href="@Url.Action("PaymentWithPaypal", "Payments") " btn btn-success">Payment</a>
                         </td>*@
+
 
                         
                             
