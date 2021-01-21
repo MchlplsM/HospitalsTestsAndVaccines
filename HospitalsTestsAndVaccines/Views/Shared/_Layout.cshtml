@@ -98,9 +98,7 @@
                                             <li class="nav-item">
                                                 <a class="page-scroll" href="#services">Service</a>
                                             </li>
-                                            <li class="nav-item">
-                                                <a class="page-scroll" href="#team">Doctor</a>
-                                            </li>
+                                            
                                             
                                             
                                             @if (!User.IsInRole("Patient") && !User.IsInRole("Dev") && !User.IsInRole("HospAdmin"))
@@ -120,14 +118,13 @@
                                             @if (User.IsInRole("Dev"))
                                             {
                                                 <li class="nav-item">@Html.ActionLink("Products", "IndexViewForDevs", "Products")</li>
-                                                <li class="nav-item">@Html.ActionLink("Appointments", "AllAppointments", "Appointments")</li>
-                                                <li class="nav-item">@Html.ActionLink("Patients", "ListOfCustomers", "ApplicationUsers")</li>
+                                                <li class="nav-item">@Html.ActionLink("Patients", "UsersWithRoles", "ApplicationUsers")</li>
                                             }
                                             @if (User.IsInRole("HospAdmin"))
                                             {
                                                 <li class="nav-item">@Html.ActionLink("Products", "IndexViewDefault", "Products")</li>
                                                 <li class="nav-item">@Html.ActionLink("Appointments", "AllAppointments", "Appointments")</li>
-                                                <li class="nav-item">@Html.ActionLink("Patients", "ListOfCustomers", "ApplicationUsers")</li>
+                                                <li class="nav-item">@Html.ActionLink("Patients", "UsersWithRoles", "ApplicationUsers")</li>
                                             }
 
 

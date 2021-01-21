@@ -232,6 +232,7 @@
     <Compile Include="ViewModels\ValidTime.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\img\covid-19-antibody-testing.jpg" />
     <Content Include="Content\assets\css\animate.css" />
     <Content Include="Content\assets\css\bootstrap-5.0.5-alpha.min.css" />
     <Content Include="Content\assets\css\LineIcons.2.0.css" />
@@ -245,6 +246,7 @@
     <Content Include="Content\assets\img\blog\blog-1.png" />
     <Content Include="Content\assets\img\blog\blog-2.png" />
     <Content Include="Content\assets\img\blog\blog-3.png" />
+    <Content Include="Content\assets\img\COVID-19_frequently Asled Questions.png" />
     <Content Include="Content\assets\img\faq\faq-img.jpg" />
     <Content Include="Content\assets\img\favicon.ico" />
     <Content Include="Content\assets\img\logo\logo.svg" />
@@ -269,6 +271,8 @@
     <Content Include="Content\assets\img\testimonial\testimonial-3.png" />
     <Content Include="Content\assets\img\testimonial\testimonial-4.png" />
     <Content Include="Content\assets\img\testimonial\testimonial-5.png" />
+    <Content Include="Content\assets\img\Cov.png" />
+    <Content Include="Content\assets\img\VaccineCovid19.jpeg" />
     <Content Include="Content\assets\img\we-do\graph-img.svg" />
     <Content Include="Content\assets\img\we-do\we-do-1.svg" />
     <Content Include="Content\assets\img\we-do\we-do-2.svg" />
