@@ -85,10 +85,6 @@
                                     <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                         <ul id="nav" class="navbar-nav ml-auto">
 
-
-
-                                            <li class="nav-item active">@Html.ActionLink("Home", "Index", "Home")</li>
-
                                             <li class="nav-item">
                                                 <a class="page-scroll" href="#about">About</a>
                                             </li>
@@ -107,14 +103,14 @@
 
                                             @if (!User.IsInRole("Patient") && !User.IsInRole("Dev") && !User.IsInRole("HospAdmin"))
                                             {
-                                                <li class="nav-item active">@Html.ActionLink("About", "About", "Home")</li>
-                                                <li class="nav-item active">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                                @*<li class="nav-item active">@Html.ActionLink("About", "About", "Home")</li>
+                                                <li class="nav-item active">@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                                                 <li class="nav-item active">@Html.ActionLink("Products", "IndexViewDefault", "Products")</li>
                                             }
                                             @if (User.IsInRole("Patient"))
                                             {
-                                                <li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>
-                                                <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                                @*<li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>
+                                                <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                                                 <li class="nav-item">@Html.ActionLink("Products", "IndexViewForPatients", "Products")</li>
                                                 <li class="nav-item">@Html.ActionLink("Appointments", "AppointmentsOfPatient", "Appointments")</li>
                                                 <li class="nav-item">@Html.ActionLink("Profile", "ReadAndEditOnly", "ApplicationUsers")</li>
@@ -122,14 +118,13 @@
                                             @if (User.IsInRole("Dev"))
                                             {
                                                 <li class="nav-item">@Html.ActionLink("Products", "IndexViewForDevs", "Products")</li>
-                                                <li class="nav-item">@Html.ActionLink("Appointments", "AllAppointments", "Appointments")</li>
-                                                <li class="nav-item">@Html.ActionLink("Patients", "ListOfCustomers", "ApplicationUsers")</li>
+                                                <li class="nav-item">@Html.ActionLink("Patients", "UsersWithRoles", "ApplicationUsers")</li>
                                             }
                                             @if (User.IsInRole("HospAdmin"))
                                             {
                                                 <li class="nav-item">@Html.ActionLink("Products", "IndexViewDefault", "Products")</li>
                                                 <li class="nav-item">@Html.ActionLink("Appointments", "AllAppointments", "Appointments")</li>
-                                                <li class="nav-item">@Html.ActionLink("Patients", "ListOfCustomers", "ApplicationUsers")</li>
+                                                <li class="nav-item">@Html.ActionLink("Patients", "UsersWithRoles", "ApplicationUsers")</li>
                                             }
                                             <li class="nav-item active"> @Html.Partial("_LoginPartial")</li>
                                         </ul>
@@ -150,12 +145,11 @@
     </div>"
 
 
+
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        
     </div>
     <!-- ========================= JS here ========================= -->
     <script src="~/Content/assets/js/bootstrap.bundle-5.0.0.alpha-min.js"></script>
