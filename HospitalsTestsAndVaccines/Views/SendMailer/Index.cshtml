@@ -1,0 +1,31 @@
+﻿
+@model HospitalsTestsAndVaccines.Core.Models.MailModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<fieldset style="background-color: palegreen;">
+    <legend>
+        <b>Email notifications</b>
+    </legend>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <p>From metroHospitaltest@gmail.com </p>
+
+        <p>To: </p>
+        <p>@Html.TextBoxFor(m => m.To)</p>
+        <p>Subject: </p>
+        @Html.DropDownListFor(m => m.Subject, new List<SelectListItem>
+                       {   new SelectListItem {Text = "Appointment Confinmation", Value = "Appointment Confinmation", Selected = true },
+                           new SelectListItem {Text = "Test results", Value = "Test results" },
+                       }, new { @class = "form-control" })
+        <p>Body: </p>
+        @Html.DropDownListFor(m => m.Body, new List<SelectListItem>
+                      {   new SelectListItem {Text = "Your appointment is confinmed!", Value = "Your appointment is confinmed!", Selected = true },
+                          new SelectListItem {Text = "Your covid19 test is negative!", Value = "Your covid19 test is negative!" },
+                      }, new { @class = "form-control" })
+        <p>@Html.TextAreaFor(m => m.Body)</p>
+        <input type="submit" value="Send" />
+    }
+</fieldset>

@@ -55,7 +55,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             {
                 db.Products.Add(product);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexViewForDevs");
             }
             return View(product);
         }
@@ -89,7 +89,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             {
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexViewForDevs");
             }
             return View(product);
         }
@@ -120,7 +120,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             Product product = db.Products.Find(id);
             db.Products.Remove(product);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("IndexViewForDevs");
         }
 
         protected override void Dispose(bool disposing)

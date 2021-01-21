@@ -574,6 +574,17 @@
                                 <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
                             </ul>
                         </div>
+
+
+                    </div>
+                    <div>
+                        <h2>LiveChat</h2>
+                        <p>Click to talk with one of our representatives: </p>
+                        <p class="button">
+                            @*@Html.ActionLink("LiveChat", "Chat", "Home", new { target = "_blank" })*@
+                            <a href="@Url.Action("Chat", "Home") " onclick="window.open('@Url.Action("Chat", "Home")', 'newwindow', 'width=300, height=500'); return false;">LiveChat</a>
+                        </p>
+
                     </div>
                 </div>
             </div>
