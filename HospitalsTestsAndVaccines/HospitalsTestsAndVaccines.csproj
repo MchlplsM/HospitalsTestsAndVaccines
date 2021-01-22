@@ -219,17 +219,13 @@
     <Compile Include="Core\Models\Payment.cs" />
     <Compile Include="Core\Models\Product.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
-    <Compile Include="Migrations\202101221234554_initial.cs" />
-    <Compile Include="Migrations\202101221234554_initial.Designer.cs">
-      <DependentUpon>202101221234554_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202101221338041_Initial.cs" />
+    <Compile Include="Migrations\202101221338041_Initial.Designer.cs">
+      <DependentUpon>202101221338041_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101221235199_seedUsers.cs" />
-    <Compile Include="Migrations\202101221235199_seedUsers.Designer.cs">
-      <DependentUpon>202101221235199_seedUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101221255117_calendar.cs" />
-    <Compile Include="Migrations\202101221255117_calendar.Designer.cs">
-      <DependentUpon>202101221255117_calendar.cs</DependentUpon>
+    <Compile Include="Migrations\202101221338189_Seed-Users.cs" />
+    <Compile Include="Migrations\202101221338189_Seed-Users.Designer.cs">
+      <DependentUpon>202101221338189_Seed-Users.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -943,14 +939,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101221234554_initial.resx">
-      <DependentUpon>202101221234554_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101221338041_Initial.resx">
+      <DependentUpon>202101221338041_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101221235199_seedUsers.resx">
-      <DependentUpon>202101221235199_seedUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101221255117_calendar.resx">
-      <DependentUpon>202101221255117_calendar.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101221338189_Seed-Users.resx">
+      <DependentUpon>202101221338189_Seed-Users.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -979,7 +972,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties content_4bootstrap-theme_1min_1css_1map__JsonSchema="" content_4bootstrap_1css_1map__JsonSchema="" />
+      <UserProperties content_4bootstrap_1css_1map__JsonSchema="" content_4bootstrap-theme_1min_1css_1map__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
