@@ -70,15 +70,20 @@
     <div>
         <p class="button">
         <p><b>SentEmail</b></p>
-        <a href="@Url.Action("Index", "SendMailer") " onclick="window.open('@Url.Action("Index", "SendMailer")', 'newwindow', 'width=400, height=600'); return false;">EmailNotifications</a>
+        <button type="button" class="btn btn-light">
+            <a href="@Url.Action("Index", "SendMailer") " onclick="window.open('@Url.Action("Index", "SendMailer")', 'newwindow', 'width=400, height=600'); return false;">EmailNotifications</a>
+        </button>
 
+        
         </p>
     </div>
 
     <div>
         <p class="button">
         <p><b>AppointmentsCalendar</b></p>
-        <a href="@Url.Action("Calendar", "Appointments") " onclick="window.open('@Url.Action("Calendar", "Appointments")', 'newwindow', 'width=800, height=1200'); return false;">AppointmentsCalendar</a>
+        <button type="button" class="btn btn-light"><a href="@Url.Action("Calendar", "Appointments") " onclick="window.open('@Url.Action("Calendar", "Appointments")', 'newwindow', 'width=800, height=1200'); return false;">AppointmentsCalendar</a></button>
+
+        
 
         </p>
     </div>
