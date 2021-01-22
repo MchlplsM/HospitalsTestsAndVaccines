@@ -54,9 +54,9 @@ namespace HospitalsTestsAndVaccines
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "765018847445674",
+               appSecret: "e0fc763de7e4ef6cae584ae72044c01f");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

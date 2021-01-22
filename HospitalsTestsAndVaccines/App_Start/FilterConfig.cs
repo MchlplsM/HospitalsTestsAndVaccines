@@ -9,6 +9,7 @@ namespace HospitalsTestsAndVaccines
         {
             filters.Add(new HandleErrorAttribute());
             filters.Add(new AuthorizeAttribute());
+            filters.Add(new RequireHttpsAttribute()); //MOSH
         }
     }
 }

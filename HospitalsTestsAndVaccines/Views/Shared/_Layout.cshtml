@@ -95,13 +95,7 @@
                                             <li class="nav-item">
                                                 <a class="page-scroll" href="#team">Doctor</a>
                                             </li>
-                                            <li class="nav-item">
-                                                <a class="page-scroll" href="#blog">Blog</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="page-scroll" href="#contact">Contact</a>
-                                            </li>
-
+                                            
                                             @if (!User.IsInRole("Patient") && !User.IsInRole("Dev") && !User.IsInRole("HospAdmin"))
                                             {
                                                 @*<li class="nav-item active">@Html.ActionLink("About", "About", "Home")</li>
