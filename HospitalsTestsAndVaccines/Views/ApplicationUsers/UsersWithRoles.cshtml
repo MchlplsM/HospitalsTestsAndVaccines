@@ -16,9 +16,6 @@
                     <td><b>Username</b></td>
                     <td><b>Email</b></td>
                     <td><b>Roles</b></td>
-                    <td><b>Edit</b></td>
-                    <td><b>Details</b></td>
-                    <td><b>Delete</b></td>
                 </tr>
             </thead>
             @foreach (var user in Model)
@@ -27,9 +24,6 @@
                     <td>@user.Username</td>
                     <td>@user.Email</td>
                     <td>@user.Role</td>
-                    <td>@Html.ActionLink("Edit", "Edit", new { id = user.UserId })</td>
-                    <td>@Html.ActionLink("Details", "Details", new { id = user.UserId })</td>
-                    <td>@Html.ActionLink("Delete", "Delete", new { id = user.UserId })</td>
                 </tr>            
             }
         </table>

@@ -63,7 +63,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Time<span class="required">*</span> </label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.TextBoxFor(m => m.Time, new { @type = "time", @class = "form-control timepicker" })
+                        @Html.TextBoxFor(m => m.Time, new { @type = "time", @class = "form-control time", step = "1800" })
                         @Html.ValidationMessageFor(m => m.Time)
                     </div>
                 </div>
