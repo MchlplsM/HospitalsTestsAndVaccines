@@ -6,6 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using DHTMLX.Common;
+using DHTMLX.Scheduler;
+using DHTMLX.Scheduler.Data;
 using HospitalsTestsAndVaccines.Core;
 using HospitalsTestsAndVaccines.Models;
 using HospitalsTestsAndVaccines.ViewModels;
@@ -68,6 +71,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             var appointment = new Appointment()
             {
                 StartDateTime = viewModel.GetStartDateTime(),
+                EndDate = viewModel.GetStartDateTime().AddMinutes(30),
                 Detail = viewModel.Detail,
                 Status = false,
                 ApplicationUser = context.Users.SingleOrDefault(p => p.Id == currentlyLoggedInUserId),
@@ -130,5 +134,66 @@ namespace HospitalsTestsAndVaccines.Controllers
                 .ToList();
             return PartialView(appointments);
         }
+
+        public ActionResult Calendar()
+        {
+            var scheduler = new DHXScheduler(this);
+            scheduler.Skin = DHXScheduler.Skins.Flat;
+
+            scheduler.Config.first_hour = 6;
+            scheduler.Config.last_hour = 20;
+
+            scheduler.LoadData = true;
+            scheduler.EnableDataprocessor = true;
+
+            return View(scheduler);
+        }
+
+        public ContentResult Data()
+        {
+            var apps = context.Appointments.ToList();
+            return new SchedulerAjaxData(apps);
+        }
+
+        public ActionResult Save(int? id, FormCollection actionValues)
+        {
+            var action = new DataAction(actionValues);
+
+            try
+            {
+                var changedEvent = DHXEventsHelper.Bind<Appointment>(actionValues);
+                switch (action.Type)
+                {
+                    case DataActionTypes.Insert:
+                        context.Appointments.Add(changedEvent);
+                        break;
+                    case DataActionTypes.Delete:
+                        context.Entry(changedEvent).State = EntityState.Deleted;
+                        break;
+                    default:// "update"  
+                        context.Entry(changedEvent).State = EntityState.Modified;
+                        break;
+                }
+                context.SaveChanges();
+                action.TargetId = changedEvent.Id;
+            }
+            catch (Exception a)
+            {
+                action.Type = DataActionTypes.Error;
+            }
+
+            return (new AjaxSaveResponse(action));
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                context.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+
     }
 }
