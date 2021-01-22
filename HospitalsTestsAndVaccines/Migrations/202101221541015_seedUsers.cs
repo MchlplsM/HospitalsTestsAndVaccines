@@ -2,8 +2,8 @@ namespace HospitalsTestsAndVaccines.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
-    
-    public partial class seedUsers : DbMigration
+
+    public partial class SeedUsers : DbMigration
     {
         public override void Up()
         {
@@ -29,7 +29,7 @@ INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'f531fada-6f77
 
 ");
         }
-        
+
         public override void Down()
         {
         }
