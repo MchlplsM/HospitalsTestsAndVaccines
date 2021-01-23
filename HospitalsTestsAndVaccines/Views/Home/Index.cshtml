@@ -566,7 +566,7 @@
                                 <h2> <span>Live Chat</span> </h2>
 
                                 <h5>Click to talk with one of our representatives: </h5>
-                                <button class="button">
+                                <button class="btn btn-outline-primary">
                                     @*@Html.ActionLink("LiveChat", "Chat", "Home", new { target = "_blank" })*@
                                     <a href="@Url.Action("Chat", "Home") " onclick="window.open('@Url.Action("Chat", "Home")', 'newwindow', 'width=400, height=600'); return false;">LiveChat</a>
                                 </button>
@@ -584,15 +584,7 @@
 
 
                     </div>
-                    <div>
-                        <h2>LiveChat</h2>
-                        <p>Click to talk with one of our representatives: </p>
-                        <p class="button">
-                            @*@Html.ActionLink("LiveChat", "Chat", "Home", new { target = "_blank" })*@
-                            @*<a href="@Url.Action("Chat", "Home") " onclick="window.open('@Url.Action("Chat", "Home")', 'newwindow', 'width=300, height=500'); return false;">LiveChat</a>*@
-                        </p>
-
-                    </div>
+                   
                 </div>
             </div>
         </div>
