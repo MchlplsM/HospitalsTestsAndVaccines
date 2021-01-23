@@ -566,7 +566,7 @@
                                 <h2> <span>Live Chat</span> </h2>
 
                                 <h5>Click to talk with one of our representatives: </h5>
-                                <button class="button">
+                                <button class="btn btn-outline-primary">
                                     @*@Html.ActionLink("LiveChat", "Chat", "Home", new { target = "_blank" })*@
                                     <a href="@Url.Action("Chat", "Home") " onclick="window.open('@Url.Action("Chat", "Home")', 'newwindow', 'width=400, height=600'); return false;">LiveChat</a>
                                 </button>
@@ -584,15 +584,7 @@
 
 
                     </div>
-                    <div>
-                        <h2>LiveChat</h2>
-                        <p>Click to talk with one of our representatives: </p>
-                        <p class="button">
-                            @*@Html.ActionLink("LiveChat", "Chat", "Home", new { target = "_blank" })*@
-                            @*<a href="@Url.Action("Chat", "Home") " onclick="window.open('@Url.Action("Chat", "Home")', 'newwindow', 'width=300, height=500'); return false;">LiveChat</a>*@
-                        </p>
-
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -614,10 +606,10 @@
                             </p>
                             <div class="footer-social-links">
                                 <ul>
-                                    <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
-                                    <li><a href="#"><i class="lni lni-instagram-original"></i></a></li>
+                                    <li><a href="https://www.facebook.com/coronavirus_info/"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a href="https://twitter.com/eody_gr?fbclid=IwAR00T7oTV18qOBrRDU8jFRCdQglM0MUFOn-9PX2olJHSbhBdnKTvj2SBWL8"><i class="lni lni-twitter-filled"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/covid-19-response-greece/"><i class="lni lni-linkedin-original"></i></a></li>
+                                    <li><a href="https://about.instagram.com/blog/announcements/coronavirus-keeping-people-safe-informed-and-supported-on-instagram"><i class="lni lni-instagram-original"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -635,6 +627,7 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="col-xl-2 col-lg-3 col-md-5">
                         <div class="footer-widget mb-30">
                             <h4>Quick Link</h4>
@@ -650,10 +643,14 @@
                     </div>
                     <div class="col-xl-4 col-lg-12 col-md-7">
                         <div class="footer-widget mb-30">
-                            <h4>Medical Location</h4>
+                            <h4>Covid-19 Cases</h4>
                             <div class="map-canvas">
-                                <iframe class="map" id="gmap_canvas"
-                                        src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
+                                <iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="100%" height="450px"></iframe>
+                                
+    
+    
+    @*<iframe class="map" id="gmap_canvas"
+                                        src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>*@
                             </div>
                         </div>
                     </div>

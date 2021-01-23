@@ -219,17 +219,13 @@
     <Compile Include="Core\Models\Payment.cs" />
     <Compile Include="Core\Models\Product.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
-    <Compile Include="Migrations\202101221234554_initial.cs" />
-    <Compile Include="Migrations\202101221234554_initial.Designer.cs">
-      <DependentUpon>202101221234554_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202101221338041_Initial.cs" />
+    <Compile Include="Migrations\202101221338041_Initial.Designer.cs">
+      <DependentUpon>202101221338041_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101221235199_seedUsers.cs" />
-    <Compile Include="Migrations\202101221235199_seedUsers.Designer.cs">
-      <DependentUpon>202101221235199_seedUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101221255117_calendar.cs" />
-    <Compile Include="Migrations\202101221255117_calendar.Designer.cs">
-      <DependentUpon>202101221255117_calendar.cs</DependentUpon>
+    <Compile Include="Migrations\202101221338189_Seed-Users.cs" />
+    <Compile Include="Migrations\202101221338189_Seed-Users.Designer.cs">
+      <DependentUpon>202101221338189_Seed-Users.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -297,6 +293,169 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Calendar.css" />
+    <Content Include="Content\Create-appointment\assets\css\style.css" />
+    <Content Include="Content\Create-appointment\assets\img\about.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\apple-touch-icon.png" />
+    <Content Include="Content\Create-appointment\assets\img\departments-1.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\departments-2.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\departments-3.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\departments-4.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\departments-5.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\doctors\doctors-1.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\doctors\doctors-2.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\doctors\doctors-3.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\doctors\doctors-4.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\favicon.png" />
+    <Content Include="Content\Create-appointment\assets\img\gallery\gallery-1.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\gallery\gallery-2.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\gallery\gallery-3.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\gallery\gallery-4.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\gallery\gallery-5.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\gallery\gallery-6.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\gallery\gallery-7.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\gallery\gallery-8.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\hero-bg.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\testimonials\testimonials-1.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\testimonials\testimonials-2.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\testimonials\testimonials-3.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\testimonials\testimonials-4.jpg" />
+    <Content Include="Content\Create-appointment\assets\img\testimonials\testimonials-5.jpg" />
+    <Content Include="Content\Create-appointment\assets\js\main.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\animate.css\animate.compat.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\animate.css\animate.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\animate.css\animate.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker.standalone.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\js\bootstrap-datepicker.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker-en-CA.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ar-tn.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.bm.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.bn.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.br.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-AU.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-CA.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-IE.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-NZ.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-ZA.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.hi.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.km.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ko.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.mn.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.oc.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.si.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ta.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.tg.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.tk.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.uz-cyrl.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.uz-latn.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\boxicons\css\animations.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\boxicons\css\boxicons.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\boxicons\css\boxicons.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\boxicons\css\transformations.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\boxicons\fonts\boxicons.svg" />
+    <Content Include="Content\Create-appointment\assets\vendor\counterup\counterup.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\icofont\icofont.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\jquery.easing\jquery.easing.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\owl.carousel\assets\ajax-loader.gif" />
+    <Content Include="Content\Create-appointment\assets\vendor\owl.carousel\assets\owl.carousel.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\owl.carousel\assets\owl.carousel.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\owl.carousel\assets\owl.theme.default.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\owl.carousel\assets\owl.theme.default.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\owl.carousel\assets\owl.theme.green.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\owl.carousel\assets\owl.theme.green.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\owl.carousel\assets\owl.video.play.png" />
+    <Content Include="Content\Create-appointment\assets\vendor\owl.carousel\owl.carousel.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\owl.carousel\owl.carousel.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\php-email-form\changelog.txt" />
+    <Content Include="Content\Create-appointment\assets\vendor\php-email-form\validate.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\remixicon\remixicon.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\remixicon\remixicon.svg" />
+    <Content Include="Content\Create-appointment\assets\vendor\remixicon\remixicon.symbol.svg" />
+    <Content Include="Content\Create-appointment\assets\vendor\venobox\venobox.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\venobox\venobox.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\venobox\venobox.min.css" />
+    <Content Include="Content\Create-appointment\assets\vendor\venobox\venobox.min.js" />
+    <Content Include="Content\Create-appointment\assets\vendor\waypoints\jquery.waypoints.min.js" />
     <Content Include="Content\css\scrolling-nav.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
@@ -577,6 +736,34 @@
     <Content Include="Content\logIn-form\scss\bootstrap\_utilities.scss" />
     <Content Include="Content\logIn-form\scss\bootstrap\_variables.scss" />
     <Content Include="Content\logIn-form\scss\style.scss" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker.css.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.css.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\boxicons\fonts\boxicons.eot" />
+    <Content Include="Content\Create-appointment\assets\vendor\boxicons\fonts\boxicons.ttf" />
+    <Content Include="Content\Create-appointment\assets\vendor\boxicons\fonts\boxicons.woff" />
+    <Content Include="Content\Create-appointment\assets\vendor\boxicons\fonts\boxicons.woff2" />
+    <Content Include="Content\Create-appointment\assets\vendor\icofont\fonts\icofont.woff" />
+    <Content Include="Content\Create-appointment\assets\vendor\icofont\fonts\icofont.woff2" />
+    <Content Include="Content\Create-appointment\assets\vendor\jquery\jquery.min.map" />
+    <Content Include="Content\Create-appointment\assets\vendor\owl.carousel\LICENSE" />
+    <Content Include="Content\Create-appointment\assets\vendor\owl.carousel\README.md" />
+    <Content Include="Content\Create-appointment\assets\vendor\remixicon\remixicon.eot" />
+    <Content Include="Content\Create-appointment\assets\vendor\remixicon\remixicon.less" />
+    <Content Include="Content\Create-appointment\assets\vendor\remixicon\remixicon.ttf" />
+    <Content Include="Content\Create-appointment\assets\vendor\remixicon\remixicon.woff" />
+    <Content Include="Content\Create-appointment\assets\vendor\remixicon\remixicon.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -925,6 +1112,7 @@
     <Content Include="Views\Payments\SuccessView.cshtml" />
     <Content Include="Views\SendMailer\Index.cshtml" />
     <Content Include="Views\Appointments\Calendar.cshtml" />
+    <Content Include="Views\ApplicationUsers\PROXEIRO.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -943,14 +1131,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101221234554_initial.resx">
-      <DependentUpon>202101221234554_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101221338041_Initial.resx">
+      <DependentUpon>202101221338041_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101221235199_seedUsers.resx">
-      <DependentUpon>202101221235199_seedUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101221255117_calendar.resx">
-      <DependentUpon>202101221255117_calendar.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101221338189_Seed-Users.resx">
+      <DependentUpon>202101221338189_Seed-Users.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -979,7 +1164,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties content_4bootstrap-theme_1min_1css_1map__JsonSchema="" content_4bootstrap_1css_1map__JsonSchema="" />
+      <UserProperties content_4bootstrap_1css_1map__JsonSchema="" content_4bootstrap-theme_1min_1css_1map__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
