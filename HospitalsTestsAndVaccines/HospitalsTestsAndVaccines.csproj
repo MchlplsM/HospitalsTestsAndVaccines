@@ -235,17 +235,13 @@
     <Compile Include="Core\Models\Payment.cs" />
     <Compile Include="Core\Models\Product.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
-    <Compile Include="Migrations\202101221539223_initial.cs" />
-    <Compile Include="Migrations\202101221539223_initial.Designer.cs">
-      <DependentUpon>202101221539223_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202101241232527_initial.cs" />
+    <Compile Include="Migrations\202101241232527_initial.Designer.cs">
+      <DependentUpon>202101241232527_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101221541015_seedUsers.cs" />
-    <Compile Include="Migrations\202101221541015_seedUsers.Designer.cs">
-      <DependentUpon>202101221541015_seedUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101241129175_ProbablyTheLastOne.cs" />
-    <Compile Include="Migrations\202101241129175_ProbablyTheLastOne.Designer.cs">
-      <DependentUpon>202101241129175_ProbablyTheLastOne.cs</DependentUpon>
+    <Compile Include="Migrations\202101241233400_seedUsers.cs" />
+    <Compile Include="Migrations\202101241233400_seedUsers.Designer.cs">
+      <DependentUpon>202101241233400_seedUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1151,14 +1147,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101221539223_initial.resx">
-      <DependentUpon>202101221539223_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101241232527_initial.resx">
+      <DependentUpon>202101241232527_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101221541015_seedUsers.resx">
-      <DependentUpon>202101221541015_seedUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101241129175_ProbablyTheLastOne.resx">
-      <DependentUpon>202101241129175_ProbablyTheLastOne.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101241233400_seedUsers.resx">
+      <DependentUpon>202101241233400_seedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -1187,7 +1180,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties content_4bootstrap_1css_1map__JsonSchema="" content_4bootstrap-theme_1min_1css_1map__JsonSchema="" />
+      <UserProperties content_4bootstrap-theme_1min_1css_1map__JsonSchema="" content_4bootstrap_1css_1map__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

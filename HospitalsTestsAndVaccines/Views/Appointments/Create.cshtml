@@ -54,7 +54,7 @@
                         @Html.ValidationMessageFor(m => m.Date)
                     </div>
                     <div class="col-md-4 form-group">
-                        @Html.TextBoxFor(m => m.Time, new { @type = "time", @class = "form-control time", step = "1800" })
+                        @Html.TextBoxFor(m => m.Time, new { @type = "time", @class = "form-control time", step = "1800", min = "08:00", max = "18:00" })
                         @Html.ValidationMessageFor(m => m.Time)
                     </div>
                 </div>
