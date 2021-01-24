@@ -18,19 +18,12 @@
                     <td><b>Phone </b></td>
                     <td><b>Date</b></td>
                     <td><b>Time </b></td>
-                    <!--<td><b>-->@*Doctor*@ <!--</b></td>-->
                     <td><b>Detail </b></td>
                     <td><b>Product </b></td>
                     <td><b>Price </b></td>
                     <td><b>Status </b></td>
                     <td><b>Edit </b></td>
-                    @* <td><b>Payment </b></td>*@
-
-
-
-
                 </tr>
-
             </thead>
             @foreach (var item in Model)
             {
@@ -39,7 +32,6 @@
                     <td>@item.ApplicationUser.Phone</td>
                     <td>@item.StartDateTime.ToString("MMM")-@item.StartDateTime.ToString("d ")-@item.StartDateTime.ToString("yyyy")</td>
                     <td>@item.StartDateTime.ToString("HH:mm")</td>
-                    @*<td>@item.Doctor.Name</td>*@
                     <td>@item.Detail</td>
                     <td>@item.Product.ProductName</td>
                     <td>@item.Product.Price$</td>
@@ -55,46 +47,33 @@
                         }
                     </td>
 
-
                     <td>
                         <a href="@Url.Action("Edit","Appointments", new { id = item.Id})" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>Edit</a>
                     </td>
-                    @*<td>
-
-                            <a href="@Url.Action("PaymentWithPaypal", "Payment") " btn btn-success">Payment</a>
-                        </td>*@
                 </tr>
             }
         </table>
     </div>
     <div>
         <p class="button">
-        <p><b>SentEmail</b></p>
+        <p><b>Send Email</b></p>
         <button type="button" class="btn btn-light">
-            <a href="@Url.Action("Index", "SendMailer") " onclick="window.open('@Url.Action("Index", "SendMailer")', 'newwindow', 'width=400, height=600'); return false;">EmailNotifications</a>
+            <a href="@Url.Action("Index", "SendMailer") " onclick="window.open('@Url.Action("Index", "SendMailer")', 'newwindow', 'width=400, height=600'); return false;">Email Notifications</a>
         </button>
-
-        
-        </p>
     </div>
 
     <div>
         <p class="button">
-        <p><b>AppointmentsCalendar</b></p>
-        <button type="button" class="btn btn-light"><a href="@Url.Action("Calendar", "Appointments") " onclick="window.open('@Url.Action("Calendar", "Appointments")', 'newwindow', 'width=800, height=1200'); return false;">AppointmentsCalendar</a></button>
-
-        
-
-        </p>
+        <p><b>Appointments Calendar</b></p>
+        <button type="button" class="btn btn-light"><a href="@Url.Action("Calendar", "Appointments") " onclick="window.open('@Url.Action("Calendar", "Appointments")', 'newwindow', 'width=800, height=1200'); return false;">Appointments Calendar</a></button>
     </div>
 
     <div class="panel-footer">
         <p class="box-title"><b>Total Appointments till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">@Model.Count()</span></p>
     </div>
-
 </div>
 
-
+@*--------------------------------------------------SORTING ASC/DESC*@
 @section scripts{
     <script>
         $(function () {

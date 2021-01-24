@@ -1133,6 +1133,7 @@
     <Content Include="Views\SendMailer\Index.cshtml" />
     <Content Include="Views\Appointments\Calendar.cshtml" />
     <Content Include="Views\ApplicationUsers\PROXEIRO.cshtml" />
+    <Content Include="Views\ApplicationUsers\Scrap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1187,7 +1188,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties content_4bootstrap_1css_1map__JsonSchema="" content_4bootstrap-theme_1min_1css_1map__JsonSchema="" />
+      <UserProperties content_4bootstrap-theme_1min_1css_1map__JsonSchema="" content_4bootstrap_1css_1map__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
