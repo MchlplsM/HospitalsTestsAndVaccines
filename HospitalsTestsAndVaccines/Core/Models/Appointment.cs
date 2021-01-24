@@ -16,12 +16,14 @@ namespace HospitalsTestsAndVaccines.Models
         public int Id { get; set; }
 
         [DataType(DataType.Date)]
+        [Required]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DHXJson(Alias = "start_date")]
         public DateTime StartDateTime { get; set; }
         [DHXJson(Alias = "end_date")]
         public DateTime EndDate { get; set; }
         [DHXJson(Alias = "text")]
+        [Required]
         public string Detail { get; set; }
         public bool Status { get; set; }
         public string ApplicationUserId { get; set; }

@@ -56,7 +56,7 @@ namespace HospitalsTestsAndVaccines
 
             app.UseFacebookAuthentication(
                appId: "765018847445674",
-               appSecret: "e0fc763de7e4ef6cae584ae72044c01f");
+               appSecret: "SecretPassForDevs"); //https://developers.facebook.com/apps/765018847445674/settings/basic/
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

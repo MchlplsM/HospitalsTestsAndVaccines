@@ -53,11 +53,6 @@ namespace HospitalsTestsAndVaccines.Controllers
                  ApplicationUser = id,
                 Products = context.Products.ToList(),
                 Heading = "New Appointment"
-                //ApplicationUsers = _context.ApplicationUsers.ToList(),
-                // AvailableDoctor
-                //Doctors = _context.Doctors
-                //.Where(a => a.IsAvailable == true)
-                //.ToList(),
             };
             return View(viewModel);
         }
