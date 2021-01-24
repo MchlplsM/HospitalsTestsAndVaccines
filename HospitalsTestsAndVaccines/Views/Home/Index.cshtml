@@ -31,7 +31,6 @@
         position: absolute; /*have to check*/
         
         left: 0;
-        height: 70%;
         width: 100%;
     }
 </style>
@@ -46,6 +45,7 @@
                     <div class="single-slider img-bg" style="background-image:url('Content/assets/img/slider/slider-1.jpg');">
                         <div class="container">
                             <div class="row">
+
                                 <div class="col-xl-7 col-lg-8 col-md-10">
                                     <div class="slider-content">
                                         <h1 data-animation="fadeInDown" data-duration="1.5s" data-delay=".5s">
@@ -390,10 +390,10 @@
     <!--========================= faq-section start ========================= -->
     <section class="faq-section theme-bg">
         <div class="faq-video-wrapper">
-            <div class="faq-video">
+            <div >
                 
 
-                    <iframe width="900" height="860" src="https://www.youtube.com/embed/kRVVWsU4Uek" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="700" height="700" position:center src="https://www.youtube.com/embed/kRVVWsU4Uek" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 
             </div>
         </div>
@@ -566,7 +566,7 @@
                                 <h2> <span>Live Chat</span> </h2>
 
                                 <h5>Click to talk with one of our representatives: </h5>
-                                <button class="button">
+                                <button class="btn btn-outline-primary">
                                     @*@Html.ActionLink("LiveChat", "Chat", "Home", new { target = "_blank" })*@
                                     <a href="@Url.Action("Chat", "Home") " onclick="window.open('@Url.Action("Chat", "Home")', 'newwindow', 'width=400, height=600'); return false;">LiveChat</a>
                                 </button>
@@ -584,15 +584,7 @@
 
 
                     </div>
-                    <div>
-                        <h2>LiveChat</h2>
-                        <p>Click to talk with one of our representatives: </p>
-                        <p class="button">
-                            @*@Html.ActionLink("LiveChat", "Chat", "Home", new { target = "_blank" })*@
-                            @*<a href="@Url.Action("Chat", "Home") " onclick="window.open('@Url.Action("Chat", "Home")', 'newwindow', 'width=300, height=500'); return false;">LiveChat</a>*@
-                        </p>
-
-                    </div>
+                   
                 </div>
             </div>
         </div>
