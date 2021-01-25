@@ -33,6 +33,16 @@ namespace HospitalsTestsAndVaccines.Controllers
             return View(appointments);
         }
 
+        [Authorize]
+        public ActionResult NewAppointmentOfPatient()
+        {
+            var appointments = context.Appointments
+                .Include(p => p.ApplicationUser)
+                .Include(p => p.Product)
+                .ToList();
+            return View(appointments);
+        }
+
         //--------------------------------Show all patients appointments
         [Authorize(Roles = "HospAdmin")]
         public ActionResult AllAppointments() 
@@ -74,7 +84,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             };
             context.Appointments.Add(appointment);
             context.SaveChanges();
-            return RedirectToAction("AppointmentsOfPatient", "Appointments");
+            return RedirectToAction("NewAppointmentOfPatient", "Appointments");
         }
 
         //--------------------------------ONLY HospADMIN can edit the Appointment -> Accept/Decline an appointment
