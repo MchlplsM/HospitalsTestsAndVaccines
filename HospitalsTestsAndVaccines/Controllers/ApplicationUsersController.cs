@@ -20,7 +20,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         }
 
         //-----------------------------------A LIST OF ALL THE CUSTOMERS FOR DEVS AND ADMINS
-        [Authorize(Roles = "Dev, HospAdmin")]
+        [Authorize(Roles = "HospAdmin")]
         public ActionResult ListOfCustomers(string option, string search) //ONLY Admins and Devs WILL SEE
         {
             if (option == "FirstName")
@@ -87,7 +87,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         }
 
         //-----------------------------------ONLY THE ADMIN CAN DELETE A PROFILE, UPON REQUEST
-        [Authorize(Roles = "Patient, HospAdmin")]
+        [Authorize(Roles = "HospAdmin")]
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -105,7 +105,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         // POST: Customers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Patient, HospAdmin")]
+        [Authorize(Roles = "HospAdmin")]
         public ActionResult DeleteConfirmed(string id)
         {
             var person = context.Users.SingleOrDefault(p => p.Id == id);

@@ -78,6 +78,7 @@ namespace HospitalsTestsAndVaccines.Controllers
         }
 
         //--------------------------------ONLY HospADMIN can edit the Appointment -> Accept/Decline an appointment
+        [Authorize(Roles = "HospAdmin")]
         public ActionResult Edit(int? id)
         {
             var appointment = context.Appointments.SingleOrDefault(p => p.Id == id);
@@ -90,9 +91,9 @@ namespace HospitalsTestsAndVaccines.Controllers
             return View(appointment);
         }
       
-
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "HospAdmin")]
         public ActionResult Edit(Appointment appointment)
         {
             var appointmentInDb = context.Appointments.Find(appointment.Id);
@@ -105,31 +106,7 @@ namespace HospitalsTestsAndVaccines.Controllers
             return RedirectToAction("AllAppointments");
         }
 
-        //var appointment = new Appointment()
-        //{
-        //    StartDateTime = viewModel,
-        //    Detail = viewModel.Detail,
-        //    Status = false,
-        //    ApplicationUser = context.Users.SingleOrDefault(p => p.Id == viewModel.ApplicationUser),
-        //    Product = context.Products.SingleOrDefault(p => p.Id == viewModel.Product)
-        //};
-        //context.Appointments.Add(appointment);
-        //    context.SaveChanges();
-        //    return RedirectToAction("AppointmentsOfPatient", "Appointments");
-
-
-        public PartialViewResult GetUpcommingAppointments()
-        {
-            DateTime today = DateTime.Now.Date;
-
-            var appointments = context.Appointments
-                .Where(/*d => d.DoctorId == id && */d => d.StartDateTime >= today)
-                .Include(p => p.ApplicationUser)
-                .OrderBy(d => d.StartDateTime)
-                .ToList();
-            return PartialView(appointments);
-        }
-
+        [Authorize(Roles = "HospAdmin")]
         public ActionResult Calendar()
         {
             var scheduler = new DHXScheduler(this);
@@ -188,7 +165,5 @@ namespace HospitalsTestsAndVaccines.Controllers
             }
             base.Dispose(disposing);
         }
-
-
     }
 }

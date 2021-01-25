@@ -13,7 +13,6 @@ namespace HospitalsTestsAndVaccines.Controllers
     public class OrdersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
         public ActionResult New()
         {
             return View();
