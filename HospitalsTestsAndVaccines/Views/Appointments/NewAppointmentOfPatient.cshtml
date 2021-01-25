@@ -1,0 +1,103 @@
+﻿@model IEnumerable<HospitalsTestsAndVaccines.Models.Appointment>
+@{ ViewBag.Title = "Appointments"; }
+
+<div class="col-md-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h3>Το νέο ραντεβού σας </h3>
+            <div class="clearfix"></div>
+        </div>
+
+                
+        <div class="x_content">
+            <table id="appointments" class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th>Όνομα Επισκέπτη</th>
+                        <th>Προϊόν</th>
+                        <th>Ημερομηνία Του Ραντεβού</th>
+                        <th>Πληροφορίες</th>
+                        <th>Στάτους</th>
+                        <th>Πληρωμή</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{var currentlyLoggedInUserId = (((System.Security.Claims.ClaimsPrincipal)System.Web.HttpContext.Current.User).Claims).ToList()[0].Value; }
+                    @foreach (var item in Model)
+                    {
+                        if (item.ApplicationUserId == currentlyLoggedInUserId)
+                        {
+                            if (item == Model.Last())
+                            {
+                            <tr>
+                                <td>@item.ApplicationUser.FirstName @item.ApplicationUser.LastName</td>
+                                <td>@item.Product.ProductName</td>
+                                <td>@item.StartDateTime</td>
+                                <td>@item.Detail</td>
+
+                                <td>
+                                    @{ if (item.Status == true)
+                                        {
+                                            <a href="#" style="padding: 3px 10px 3px 10px; background-color:green " class="badge" readonly>Approved</a> }
+                                        else
+                                        {
+                                            <a href="#" style="padding: 3px 10px 3px 10px; background-color:darkorange" class="badge" readonly>Pending</a> } }
+                                </td>
+
+                                <td>
+                                    <form action="/Appointments/AppointmentsOfPatient" method="POST">
+                                        <article>
+                                            <label>PAY @item.Product.Price €</label>
+                                        </article>
+
+                                        <script src="//checkout.stripe.com/v2/checkout.js"
+                                                class="stripe-button"
+                                                data-key="pk_test_51ICp3xBKmsnNn7eW2v8iCHH9qTYhPB9T1wldwVeQdIJ43hB7aCUmBMaPBAID2CNHv0vZ0wKB8r74FWA6KOQVRyyy00tFyEPeYR"
+                                                data-locale="auto"
+                                                data-description=@item.Product.ProductName
+                                                data-currency="eur"
+                                                data-amount="@(item.Product.Price * 100)">
+                                        </script>
+                                    </form>
+                                </td>
+                            </tr>
+                                                }
+                                            }
+                                        }
+                </tbody>
+            </table>
+            <br />
+            <b>After receiving your payment, we will confirm the approval of your request.</b>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <bold>Σημασιολογία της Κατάστασης</bold>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            @{<a href="#" style="padding: 3px 10px 3px 10px; background-color:darkorange" class="badge" readonly>Pending</a>}
+                        </td>
+                        <td>
+                            Το Ραντεβού σας δεν έχει εγκριθεί. Παρακαλώ περιμένετε.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @{<a href="#" style="padding: 3px 10px 3px 10px; background-color:green" class="badge" readonly>Approved</a>}
+                            </td>
+                            <td>
+                                Το Ραντεβού σας έχει εγκριθεί.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+   
+
