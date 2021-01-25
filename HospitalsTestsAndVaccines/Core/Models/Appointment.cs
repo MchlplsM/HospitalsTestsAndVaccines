@@ -14,7 +14,6 @@ namespace HospitalsTestsAndVaccines.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [DHXJson(Alias = "id")]
         public int Id { get; set; }
-
         [DataType(DataType.Date)]
         [Required]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

@@ -13,12 +13,10 @@ namespace HospitalsTestsAndVaccines.ViewModels
 
         [Required]
         [DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public string Date { get; set; }
 
         [Required]
         public string Time { get; set; }
-
 
         [Required]
         public string Detail { get; set; }
@@ -26,15 +24,17 @@ namespace HospitalsTestsAndVaccines.ViewModels
         [Required]
         public bool Status { get; set; }
 
-
         [Required]
         public string ApplicationUser { get; set; }
+
         public IEnumerable<ApplicationUser> ApplicationUsers { get; set; }
         
         public string Heading { get; set; }
 
         public IEnumerable<Appointment> Appointments { get; set; }
+
         public int Product { get; set; }
+
         public IEnumerable<Product> Products { get; set; }
 
         public DateTime GetStartDateTime()

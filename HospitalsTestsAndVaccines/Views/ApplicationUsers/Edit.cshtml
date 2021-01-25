@@ -7,14 +7,13 @@
 
 <h2>Διαμορφώστε και αλλάξτε τα στοιχεία του Προφίλ σας</h2>
 
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>ApplicationUser</h4>
-    <hr />
+    <div class="form-horizontal">
+        <h4>ApplicationUser</h4>
+        <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.Id)
 
@@ -110,6 +109,7 @@
             <input type="submit" value="Save" class="btn btn-default" />
         </div>
     </div>
+       @*ΚΩΣΤΑ ΕΔΩ ΚΑΙ ΚΑΤΩ ΜΠΑΙΝΟΥΝ ΔΕΞΙΑ-------------------------------------------------------*@
     <div style="visibility:hidden">
         <div class="form-group">
             @Html.LabelFor(model => model.EmailConfirmed, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -193,8 +193,6 @@
             </div>
         </div>
     </div>
-
-
 </div>
 }
 

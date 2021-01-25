@@ -7,13 +7,13 @@ namespace HospitalsTestsAndVaccines.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ProbablyTheLastOne : IMigrationMetadata
+    public sealed partial class THElastOfUs : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ProbablyTheLastOne));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(THElastOfUs));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101241129175_ProbablyTheLastOne"; }
+            get { return "202101251551216_THElastOfUs"; }
         }
         
         string IMigrationMetadata.Source

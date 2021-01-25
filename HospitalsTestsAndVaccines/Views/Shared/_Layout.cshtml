@@ -18,7 +18,6 @@
     <link href="~/Content/Calendar.css" rel="stylesheet" type="text/css" />
 </head>
 
-
 <style>
     .header-wrapper1{
         position:absolute;
@@ -29,27 +28,7 @@
     }
 </style>
 <body>
-    <!--[if lte IE 9]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
-    <!-- ========================= preloader start ========================= -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="ytp-spinner">
-                <div class="ytp-spinner-container">
-                    <div class="ytp-spinner-rotator">
-                        <div class="ytp-spinner-left">
-                            <div class="ytp-spinner-circle"></div>
-                        </div>
-                        <div class="ytp-spinner-right">
-                            <div class="ytp-spinner-circle"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- preloader end -->
+   
     <!-- ========================= header start ========================= -->
     <div class="class="preloader">
         <header id="home" class="header">
@@ -100,14 +79,10 @@
                                                                                        
                                             @if (!User.IsInRole("Patient") && !User.IsInRole("Dev") && !User.IsInRole("HospAdmin"))
                                             {
-                                                @*<li class="nav-item active">@Html.ActionLink("About", "About", "Home")</li>
-                                                <li class="nav-item active">@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                                                 <li class="nav-item active">@Html.ActionLink("Products", "IndexViewDefault", "Products")</li>
                                             }
                                             @if (User.IsInRole("Patient"))
                                             {
-                                                @*<li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>
-                                                <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                                                 <li class="nav-item">@Html.ActionLink("Products", "IndexViewForPatients", "Products")</li>
                                                 <li class="nav-item">@Html.ActionLink("Appointments", "AppointmentsOfPatient", "Appointments")</li>
                                                 <li class="nav-item">@Html.ActionLink("Profile", "ReadAndEditOnly", "ApplicationUsers")</li>
@@ -134,11 +109,7 @@
                     </div> <!-- container -->
                 </div> <!-- navbar area -->
             </div>
-
-
         </header>
-
-
     </div>
 
 
@@ -146,7 +117,6 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        
     </div>
     <!-- ========================= JS here ========================= -->
     <script src="~/Content/assets/js/bootstrap.bundle-5.0.0.alpha-min.js"></script>

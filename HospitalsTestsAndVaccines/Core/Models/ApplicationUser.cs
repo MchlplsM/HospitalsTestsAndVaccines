@@ -47,7 +47,6 @@ namespace HospitalsTestsAndVaccines.Models
         [Display(Name = "Νομός")]
         public string State { get; set; }
         public ICollection<Appointment> Appointments { get; set; }
-        public ICollection<Attendance> Attendances { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -59,7 +58,6 @@ namespace HospitalsTestsAndVaccines.Models
         public ApplicationUser()
         {
             Appointments = new Collection<Appointment>();
-            Attendances = new Collection<Attendance>();
         }
     }
 }

@@ -1,9 +1,7 @@
 ﻿@model HospitalsTestsAndVaccines.ViewModels.AppointmentFormViewModel
 
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Vendor CSS Files -->
     <link href="~/Content/Create-appointment/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,21 +19,15 @@
 </head>
 <body>
 
-   
-
 <div class="preloader1">
     <!-- ======= Appointment Section ======= -->
     <section id="appointment" class="appointment section-bg">
         <div class="container">
 
-
-
-
             <div class="section-title">
                 <h2>Make an Appointment</h2>
                 <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
             </div>
-
 
             @using (Html.BeginForm("Create", "Appointments", FormMethod.Post, new { @class = "php-email-form", @autocomplete = "off" }))
             {
@@ -43,78 +35,36 @@
                 @Html.AntiForgeryToken()
                 <div class="form-row">
                     <div class="col-md-4 form-group">
-
                         <div>
-                            @Html.DropDownListFor(m => m.Product, new SelectList(Model.Products, "Id", "ProductName"), "Select Product", new { @class = "form-control", id = "DoctorID" })
+                            @Html.DropDownListFor(m => m.Product, new SelectList(Model.Products, "Id", "ProductName"), "Select Product", new { @class = "form-control", @required = "required" })
                             @Html.ValidationMessageFor(m => m.Product, string.Empty, new { @class = "" })
                         </div>
                     </div>
                     <div class="col-md-4 form-group">
-                        @Html.TextBoxFor(m => m.Date, new { @type = "date", @class = "form-control date", @placeholder = "Appointment Date" })
+                        @Html.TextBoxFor(m => m.Date, new { @type = "date", @class = "form-control date", @placeholder = "Appointment Date", @required = "required" })
                         @Html.ValidationMessageFor(m => m.Date)
                     </div>
                     <div class="col-md-4 form-group">
-                        @Html.TextBoxFor(m => m.Time, new { @type = "time", @class = "form-control time", step = "1800" })
+                        @Html.TextBoxFor(m => m.Time, new { @type = "time", @class = "form-control time", step = "1800", @required = "required", min = "08:00", max = "18:00" })
                         @Html.ValidationMessageFor(m => m.Time)
                     </div>
                 </div>
-
                 <div class="form-group">
-                    @Html.TextAreaFor(m => m.Detail, new { @class = "form-control", @placeholder = "Message ", @rows = "5" })
+                    @Html.TextAreaFor(m => m.Detail, new { @class = "form-control", @placeholder = "Message ", @rows = "5", @required = "required" })
                     @Html.ValidationMessageFor(m => m.Detail)
-
-
                 </div>
                 <div class="mb-3">
                     <div class="loading">Loading</div>
                     <div class="error-message"></div>
                     <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
                 </div>
-
                 <div class="text-center" id="button"><button type="submit">Make an Appointment</button></div>
             }
         </div>
     </section>
 </div>
 
-
 <script>
-    $(document).ready(function () {
-        $('#divAppointments').hide();
-
-        var URL = '/appointments/DoctorsList/';
-        $.getJSON(URL, function (data) {
-            var items = '<option value="">Select Doctor</option>';
-            $.each(data, function (i, doctor) {
-                items += "<option value='" + doctor.Value + "'>" + doctor.Text
-                    + "</option>";
-            });
-            $('#DoctorID').html(items);
-        });
-
-
-        $('#DoctorID').change(function () {
-            var URL = '/appointments/GetUpcommingAppointments/' + $('#DoctorID').val();
-            $.ajax({
-                url: URL,
-                contentType: 'application/html; charset=utf-8',
-                type: 'GET',
-                dataType: 'html'
-            })
-                .success(function (result) {
-                    $('#divAppointments').show();
-                    $('#divAppointments').html(result);
-                })
-                .error(function (xhr, status) {
-                    alert(status);
-                })
-
-        });
-
-
-    });
-
-
     $('.date').datepicker({
         minDate: 0,
         format: "dd/mm/yyyy",
@@ -139,12 +89,8 @@
             return this.optional(element) || !/Invalid|NaN/.test(new Date(value));
         }
     };
-
 </script>
-
-
 </body>
-
 </html>
 
 

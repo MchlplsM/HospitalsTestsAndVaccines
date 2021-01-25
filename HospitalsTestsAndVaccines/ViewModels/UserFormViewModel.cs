@@ -14,6 +14,7 @@ namespace HospitalsTestsAndVaccines.ViewModels
         [Required]
         [MinLength(2)]
         public string FirstName { get; set; }
+
         [Required]
         [MinLength(2)]
         public string LastName { get; set; }
@@ -22,6 +23,7 @@ namespace HospitalsTestsAndVaccines.ViewModels
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public string DateOfBirth { get; set; }
+
         [Required]
         [MinLength(11)]
         public string Amka { get; set; }
@@ -35,7 +37,6 @@ namespace HospitalsTestsAndVaccines.ViewModels
             DateOfBirth = applicationUser.DateOfBirth;
             Amka = applicationUser.Amka;
             HealthIssues = applicationUser.HealthIssues;
-
         }
     }
 }
