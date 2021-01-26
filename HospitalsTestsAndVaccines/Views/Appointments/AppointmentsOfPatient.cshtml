@@ -20,7 +20,7 @@
                         <th>Ημερομηνία Του Ραντεβού</th>
                         <th>Πληροφορίες</th>
                         <th>Στάτους</th>
-                        <th>Πληρωμή</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
@@ -44,22 +44,7 @@
                                     <a href="#" style="padding: 3px 10px 3px 10px; background-color:darkorange" class="badge" readonly>Pending</a> } }
                         </td>
 
-                        <td>
-                            <form action="/Appointments/AppointmentsOfPatient" method="POST">
-                                <article>
-                                    <label>PAY @item.Product.Price €</label>
-                                </article>
-
-                                <script src="//checkout.stripe.com/v2/checkout.js"
-                                        class="stripe-button"
-                                        data-key="pk_test_51ICp3xBKmsnNn7eW2v8iCHH9qTYhPB9T1wldwVeQdIJ43hB7aCUmBMaPBAID2CNHv0vZ0wKB8r74FWA6KOQVRyyy00tFyEPeYR"
-                                        data-locale="auto"
-                                        data-description=@item.Product.ProductName
-                                        data-currency="eur"
-                                        data-amount="@(item.Product.Price * 100)">
-                                </script>
-                            </form>
-                        </td>
+                        
                     </tr>
                         }
                      }

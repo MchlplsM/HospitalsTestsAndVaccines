@@ -232,13 +232,13 @@
     <Compile Include="Core\Models\Min16YearsIfAMember.cs" />
     <Compile Include="Core\Models\Product.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
-    <Compile Include="Migrations\202101221541015_seedUsers.cs" />
-    <Compile Include="Migrations\202101221541015_seedUsers.Designer.cs">
-      <DependentUpon>202101221541015_seedUsers.cs</DependentUpon>
+    <Compile Include="Migrations\202101251926199_initial.cs" />
+    <Compile Include="Migrations\202101251926199_initial.Designer.cs">
+      <DependentUpon>202101251926199_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101251551216_THElastOfUs.cs" />
-    <Compile Include="Migrations\202101251551216_THElastOfUs.Designer.cs">
-      <DependentUpon>202101251551216_THElastOfUs.cs</DependentUpon>
+    <Compile Include="Migrations\202101251927043_seedUsers.cs" />
+    <Compile Include="Migrations\202101251927043_seedUsers.Designer.cs">
+      <DependentUpon>202101251927043_seedUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1312,6 +1312,7 @@
     <Content Include="Views\Payments\SuccessView.cshtml" />
     <Content Include="Views\SendMailer\Index.cshtml" />
     <Content Include="Views\Appointments\Calendar.cshtml" />
+    <Content Include="Views\Appointments\NewAppointmentOfPatient.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1330,11 +1331,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101221541015_seedUsers.resx">
-      <DependentUpon>202101221541015_seedUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101251926199_initial.resx">
+      <DependentUpon>202101251926199_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101251551216_THElastOfUs.resx">
-      <DependentUpon>202101251551216_THElastOfUs.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101251927043_seedUsers.resx">
+      <DependentUpon>202101251927043_seedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
