@@ -23,21 +23,25 @@
                     <td><b>Διαχείρηση Ασθενή</b></td>
                 </tr>
             </thead>
+            
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>@item.FirstName @item.LastName</td>
-                    <td>@item.Phone</td>
-                    <td>@item.DateOfBirth</td>
-                    <td>@item.Amka</td>
-                    <td>@item.Email</td>
-                    <td>@item.HealthIssues</td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                    </td>
-                </tr>
+                if (item.Id != "207758ff-59e1-4cb9-a2ad-32efb936138c" && item.Id != "d8417601-4cbb-4281-87d6-43b61a894e7d")
+                {
+                    <tr>
+                        <td>@item.FirstName @item.LastName</td>
+                        <td>@item.Phone</td>
+                        <td>@item.DateOfBirth</td>
+                        <td>@item.Amka</td>
+                        <td>@item.Email</td>
+                        <td>@item.HealthIssues</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
             }
         </table>
     </div>
