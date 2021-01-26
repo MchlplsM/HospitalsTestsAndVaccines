@@ -5,28 +5,42 @@
 <hr/>
 @{
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() == 0) {
     
+    }
+    else {
         using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl })) {
             @Html.AntiForgeryToken()
-            <div id="socialLoginList">
+
+            <div id="social-login">
                 <p>
-                    @{ int i = 0;
+                    @{
+                        int i = 0;
                         foreach (AuthenticationDescription p in loginProviders)
                         {
                             if (i == 0)
                             {
-                                <a href="#" class="twitter btn d-flex justify-content-center align-items-center">
-                                    
-                                </a>
-                                <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType"><span class="icon-google mr-3"></span>Login with your Google Account</button>
+
+                                <button class="btn btn-danger" type="submit" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType">
+                                    <span class="icon-facebook mr-3"></span>Login with your Google Account
+                                </button>
+
+
                             }
                             else
                             {
-                                <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType"><span class="icon-facebook mr-3"></span>Login with your Facebook Account</button>
+                                <div>
+                                    <button type="submit" class="btn btn-primary" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType">
+                                        <span class="icon-facebook mr-3"></span>Login with your FaceBook Account
+                                    </button>
+                                </div>
+
                             }
                             i++;
+
                         }
                     }
+
                 </p>
             </div>
         }
