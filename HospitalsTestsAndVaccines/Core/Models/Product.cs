@@ -21,6 +21,16 @@ namespace HospitalsTestsAndVaccines.Models
         public string Description { get; set; }
         [Display(Name = "Τιμή")]
         public double Price { get; set; }
+        public bool isZero()
+        {
+            if (Price > 0)
+            {
+                return false;
+            }
+            else
+                return true;
+        }
+
     }
     public enum ProductCategory
     {

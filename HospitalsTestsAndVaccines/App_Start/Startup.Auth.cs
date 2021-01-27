@@ -54,15 +54,15 @@ namespace HospitalsTestsAndVaccines
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            app.UseFacebookAuthentication(
-               appId: "765018847445674",
-               appSecret: "e0fc763de7e4ef6cae584ae72044c01f"); //https://developers.facebook.com/apps/765018847445674/settings/basic/
+            //app.UseFacebookAuthentication(
+            //   appId: "765018847445674",
+            //   appSecret: "e0fc763de7e4ef6cae584ae72044c01f"); //https://developers.facebook.com/apps/765018847445674/settings/basic/
 
-            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            {
-                ClientId = "758461031801-edusfp9tkgk8dqm6t698fqbk1qv1q450.apps.googleusercontent.com",
-                ClientSecret = "QMcHQyL1IXXh7y9RZoXSdeI1"
-            });
+            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            //{
+            //    ClientId = "758461031801-edusfp9tkgk8dqm6t698fqbk1qv1q450.apps.googleusercontent.com",
+            //    ClientSecret = "QMcHQyL1IXXh7y9RZoXSdeI1"
+            //});
         }
     }
 }
