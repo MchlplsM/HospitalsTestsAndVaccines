@@ -232,9 +232,13 @@
     <Compile Include="Core\Models\Min16YearsIfAMember.cs" />
     <Compile Include="Core\Models\Product.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
-    <Compile Include="Migrations\202101270944018_initial.cs" />
-    <Compile Include="Migrations\202101270944018_initial.Designer.cs">
-      <DependentUpon>202101270944018_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202101271609185_initial.cs" />
+    <Compile Include="Migrations\202101271609185_initial.Designer.cs">
+      <DependentUpon>202101271609185_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101271610140_seedUsers.cs" />
+    <Compile Include="Migrations\202101271610140_seedUsers.Designer.cs">
+      <DependentUpon>202101271610140_seedUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1327,8 +1331,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101270944018_initial.resx">
-      <DependentUpon>202101270944018_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101271609185_initial.resx">
+      <DependentUpon>202101271609185_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101271610140_seedUsers.resx">
+      <DependentUpon>202101271610140_seedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -1357,7 +1364,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties content_4bootstrap_1css_1map__JsonSchema="" content_4bootstrap-theme_1min_1css_1map__JsonSchema="" />
+      <UserProperties content_4bootstrap-theme_1min_1css_1map__JsonSchema="" content_4bootstrap_1css_1map__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
