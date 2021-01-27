@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using HospitalsTestsAndVaccines.Migrations;
+//using HospitalsTestsAndVaccines.Migrations;
 using Microsoft.Owin;
 using Owin;
 

@@ -80,10 +80,25 @@ namespace HospitalsTestsAndVaccines.Controllers
                 Status = false,
                 ApplicationUser = context.Users.SingleOrDefault(p => p.Id == currentlyLoggedInUserId),
                 Product = context.Products.SingleOrDefault(p => p.Id == viewModel.Product)
+
             };
+            //var zeroPrice = context.Products.(p => p.Price == 0.0);
+
+            //if (zeroPrice.Price = true)
+            //    return RedirectToAction("AllAppointments");
+
+            //context.Appointments.Add(appointment);
+            //context.SaveChanges();
+            //return RedirectToAction("NewAppointmentOfPatient", "Appointments");
+            bool isZero = appointment.Product.isZero();
             context.Appointments.Add(appointment);
             context.SaveChanges();
-            return RedirectToAction("NewAppointmentOfPatient", "Appointments");
+            if (isZero == true)
+            {
+                return RedirectToAction("AppointmentsOfPatient", "Appointments");
+            }
+            else
+                return RedirectToAction("NewAppointmentOfPatient", "Appointments");
         }
 
         //--------------------------------ONLY HospADMIN can edit the Appointment -> Accept/Decline an appointment
