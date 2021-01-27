@@ -82,14 +82,6 @@ namespace HospitalsTestsAndVaccines.Controllers
                 Product = context.Products.SingleOrDefault(p => p.Id == viewModel.Product)
 
             };
-            //var zeroPrice = context.Products.(p => p.Price == 0.0);
-
-            //if (zeroPrice.Price = true)
-            //    return RedirectToAction("AllAppointments");
-
-            //context.Appointments.Add(appointment);
-            //context.SaveChanges();
-            //return RedirectToAction("NewAppointmentOfPatient", "Appointments");
             bool isZero = appointment.Product.isZero();
             context.Appointments.Add(appointment);
             context.SaveChanges();

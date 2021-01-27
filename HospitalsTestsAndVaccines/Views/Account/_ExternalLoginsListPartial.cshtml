@@ -2,36 +2,39 @@
 @using Microsoft.Owin.Security
 
 <h4>Use another service to log in.</h4>
-<hr/>
+<hr />
 @{
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
-
-            <div id="social-login">
-                <p>
-                    @{
-                        int i = 0;
-                        foreach (AuthenticationDescription p in loginProviders)
+    using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl }))
+    {
+        @Html.AntiForgeryToken()
+        <div id="social-login">
+            <p>
+                @{
+                    int i = 0;
+                    foreach (AuthenticationDescription p in loginProviders)
+                    {
+                        if (i == 0)
                         {
-                            if (i == 0)
-                            {
-                                <button class="btn btn-danger" type="submit" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType">
-                                    <span class="icon-facebook mr-3"></span>Login with your Google Account
-                                </button>
-                            }
-                            else
-                            {
-                                <div>
-                                    <button type="submit" class="btn btn-primary" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType">
-                                        <span class="icon-facebook mr-3"></span>Login with your FaceBook Account
-                                    </button>
-                                </div>
-                            }
-                            i++;
-
+                            <button class="btn btn-danger" type="submit" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType">
+                                <span class="icon-google mr-3"></span>Login with your Google Account
+                            </button>
                         }
-                    }
+                        else
+                        {
+                            <div>
+                                <button type="submit" class="btn btn-primary" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType">
+                                    <span class="icon-facebook mr-3"></span>Login with your FaceBook Account
+                                </button>
+                            </div>
+                        }
+                        i++;
 
-                </p>
-            </div>
-        }
-    
+                    }
+                }
+
+            </p>
+        </div>
+    }
+}
+
