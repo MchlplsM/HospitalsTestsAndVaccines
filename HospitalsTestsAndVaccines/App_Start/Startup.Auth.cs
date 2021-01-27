@@ -55,14 +55,15 @@ namespace HospitalsTestsAndVaccines
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "AddClientId",
-               appSecret: "AddCode"); //https://developers.facebook.com/apps/765018847445674/settings/basic/
-
+               appId: "InsertHereAppID",
+               appSecret: "InsertHereAppSecret"); //https://developers.facebook.com/apps/765018847445674/settings/basic/
+            
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "AddClientId",
-                ClientSecret = "AddCode"
+                ClientId = "InsertHereClientID",
+                ClientSecret = "InsertHereClientSecret"
             });
+            
         }
     }
 }
